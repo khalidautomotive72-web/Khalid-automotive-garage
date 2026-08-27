@@ -827,8 +827,8 @@
       </div>
 
       <div class="svc-card">
-        <div class="icon"><img class="icon-img" src="images/image11.png" alt="EV Diagnostic" style="width:100%;height:100%;object-fit:cover;border-radius:18px;background:#000;"></div>
-        <h3 id="svc-wheel">EV Diagnostic</h3>
+        <div class="icon"><img class="icon-img" src="images/image11.png" alt="EV Diagnostic &amp; Repairs" style="width:100%;height:100%;object-fit:cover;border-radius:18px;background:#000;"></div>
+        <h3 id="svc-wheel">EV Diagnostic &amp; Repairs</h3>
       </div>
 
       <!-- COMPUTER DIAGNOSTICS WITH EV DIAGNOSTIC SCANNER PHOTO ICON -->
@@ -836,7 +836,7 @@
         <div class="icon">
           <img class="icon-img" src="images/image09.jpg" alt="EV Computer Diagnostic Scanner" style="width:100%;height:100%;object-fit:cover;border-radius:18px;">
         </div>
-        <h3 id="svc-diagnosis">Computer Diagnostics</h3>
+        <h3 id="svc-diagnosis">General Vehicle Inspection</h3>
       </div>
 
     </div>
@@ -985,8 +985,8 @@
             <option>AC Parts Maintenance</option>
             <option>Body Repair &amp; Painting</option>
             <option>Transmission</option>
-            <option>EV Diagnostic</option>
-            <option>Computer Diagnostics</option>
+            <option>EV Diagnostic &amp; Repairs</option>
+            <option>General Vehicle Inspection</option>
             <option>Not sure — general check-up</option>
           </select>
         </div>
@@ -1388,8 +1388,8 @@
             <div class="ka-field"><label>AC Parts Maintenance</label><input id="ka-svc-ac"></div>
             <div class="ka-field"><label>Body Repair &amp; Painting</label><input id="ka-svc-body"></div>
             <div class="ka-field"><label>Transmission</label><input id="ka-svc-transmission"></div>
-            <div class="ka-field"><label>EV Diagnostic</label><input id="ka-svc-wheel"></div>
-            <div class="ka-field"><label>Computer Diagnostics</label><input id="ka-svc-diagnosis"></div>
+            <div class="ka-field"><label>EV Diagnostic &amp; Repairs</label><input id="ka-svc-wheel"></div>
+            <div class="ka-field"><label>General Vehicle Inspection</label><input id="ka-svc-diagnosis"></div>
           </div>
           <div class="ka-save-bar"><button class="ka-btn ka-btn-amber" id="kaSaveServices">Save Changes</button></div>
           <div class="ka-saved-msg" id="ka-saved-services">Saved. Refresh the site to see it live.</div>
@@ -1459,7 +1459,7 @@
     function saveAdmins(a){ localStorage.setItem(ADMINS_KEY, JSON.stringify(a)); }
     function loadContentData(){
       return JSON.parse(localStorage.getItem(KHALID_CONTENT_KEY) || 'null') || {
-        services: { engine:'Engine Overhaul', electrical:'Electrical System', ac:'AC Parts Maintenance', body:'Body Repair & Painting', transmission:'Transmission', wheel:'EV Diagnostic', fluid:'General Service', diagnosis:'Computer Diagnostics' },
+        services: { engine:'Engine Overhaul', electrical:'Electrical System', ac:'AC Parts Maintenance', body:'Body Repair & Painting', transmission:'Transmission', wheel:'EV Diagnostic & Repairs', fluid:'General Service', diagnosis:'General Vehicle Inspection' },
         gallery: ['gallery/photo-1.jpg','gallery/photo-2.jpg','gallery/photo-3.jpg','gallery/photo-4.jpg','gallery/photo-5.jpg','gallery/photo-6.jpg'],
         reviews: [],
         contact: { address:"Cross the bridge from Ayat 7, towards Ayat 49 condominium — you'll find us there.", phone:"+251 912 941 327", hours:"Monday – Saturday, 8:00 AM – 7:00 PM", tiktok:"#", instagram:"#", youtube:"#" }
