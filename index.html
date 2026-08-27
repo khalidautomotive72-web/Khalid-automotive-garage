@@ -1334,6 +1334,8 @@
       #kaRoot .ka-item-card input, #kaRoot .ka-item-card textarea, #kaRoot .ka-item-card select{
         width:100%; padding:9px 11px; border-radius:8px; border:1px solid rgba(255,255,255,.15);
         background:rgba(255,255,255,.04); color:#FFFFFF; font-size:13px; outline:none; font-family:inherit; }
+      #kaRoot .ka-item-card input[type="file"]{ padding:8px; cursor:pointer; }
+      #kaRoot .ka-g-or{ font-size:11px; color:rgba(255,255,255,.4); text-align:center; margin:2px 0; }
       #kaRoot .ka-item-card textarea{ resize:vertical; min-height:50px; }
       #kaRoot .ka-remove-btn{ background:transparent; border:1px solid rgba(229,72,77,.4); color:#E5484D; width:30px; height:30px; border-radius:8px; cursor:pointer; font-size:16px; flex-shrink:0; }
       #kaRoot .ka-add-btn{ margin-top:4px; padding:10px 16px; border-radius:99px; border:1px dashed rgba(255,255,255,.35);
@@ -1543,14 +1545,51 @@
     function addGalleryField(value){
       const card = document.createElement('div');
       card.className = 'ka-item-card';
-      card.innerHTML = `<div class="ka-item-fields"><input class="ka-g-input" placeholder="gallery/photo.jpg" value="${value ? value.replace(/"/g,'&quot;') : ''}"></div>
+      const isData = value && value.startsWith('data:');
+      card.innerHTML = `<div class="ka-item-fields">
+          <div class="ka-g-preview-wrap">
+            <img class="ka-g-preview" src="${value || ''}" style="${value ? '' : 'display:none;'} width:100%; max-height:140px; object-fit:cover; border-radius:8px; margin-bottom:8px;">
+          </div>
+          <input type="file" accept="image/*" class="ka-g-file">
+          <div class="ka-g-or">— or paste an image URL / path below —</div>
+          <input class="ka-g-input" placeholder="gallery/photo.jpg or https://..." value="${(!isData && value) ? value.replace(/"/g,'&quot;') : ''}">
+        </div>
         <button class="ka-remove-btn">&times;</button>`;
+      const fileInput = card.querySelector('.ka-g-file');
+      const urlInput = card.querySelector('.ka-g-input');
+      const preview = card.querySelector('.ka-g-preview');
+      card.dataset.dataUrl = isData ? value : '';
+      fileInput.addEventListener('change', () => {
+        const file = fileInput.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = e => {
+          card.dataset.dataUrl = e.target.result;
+          urlInput.value = '';
+          preview.src = e.target.result;
+          preview.style.display = 'block';
+        };
+        reader.readAsDataURL(file);
+      });
+      urlInput.addEventListener('input', () => {
+        if (urlInput.value.trim()) {
+          card.dataset.dataUrl = '';
+          preview.src = urlInput.value.trim();
+          preview.style.display = 'block';
+        }
+      });
       card.querySelector('.ka-remove-btn').addEventListener('click', () => card.remove());
       $('kaGalleryList').appendChild(card);
     }
     $('kaAddGallery').addEventListener('click', () => addGalleryField(''));
     $('kaSaveGallery').addEventListener('click', () => {
-      const vals = Array.from(root.querySelectorAll('.ka-g-input')).map(i => i.value.trim()).filter(Boolean);
+      const cards = Array.from(root.querySelectorAll('#kaGalleryList .ka-item-card'));
+      const vals = cards.map(card => {
+        const dataUrl = card.dataset.dataUrl;
+        if (dataUrl) return dataUrl;
+        const input = card.querySelector('.ka-g-input');
+        return input.value.trim();
+      }).filter(Boolean);
       const c = loadContentData(); c.gallery = vals; saveContentData(c); flashSaved('ka-saved-gallery');
     });
 
