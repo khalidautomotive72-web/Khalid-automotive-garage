@@ -797,8 +797,8 @@
     <div class="svc-grid reveal">
 
       <div class="svc-card">
-        <div class="icon"><img class="icon-img" src="images/image02.jpg" alt="Check Engine Warning Light Icon" style="width:100%;height:100%;object-fit:cover;border-radius:18px;background:#1a1a1a;"></div>
-        <h3 id="svc-engine">Engine</h3>
+        <div class="icon"><img class="icon-img" src="images/image05.jpg" alt="General Service"></div>
+        <h3 id="svc-fluid">General Service</h3>
       </div>
 
       <div class="svc-card">
@@ -807,13 +807,13 @@
       </div>
 
       <div class="svc-card">
-        <div class="icon"><img class="icon-img" src="images/image04.jpg" alt="AC Parts Maintenance"></div>
-        <h3 id="svc-ac">AC Parts Maintenance</h3>
+        <div class="icon"><img class="icon-img" src="images/image02.jpg" alt="Engine Overhaul" style="width:100%;height:100%;object-fit:cover;border-radius:18px;background:#1a1a1a;"></div>
+        <h3 id="svc-engine">Engine Overhaul</h3>
       </div>
 
       <div class="svc-card">
-        <div class="icon"><img class="icon-img" src="images/image05.jpg" alt="Oil and Fluid Exchange"></div>
-        <h3 id="svc-fluid">Fluid Exchanges</h3>
+        <div class="icon"><img class="icon-img" src="images/image04.jpg" alt="AC Parts Maintenance"></div>
+        <h3 id="svc-ac">AC Parts Maintenance</h3>
       </div>
 
       <div class="svc-card">
@@ -827,8 +827,8 @@
       </div>
 
       <div class="svc-card">
-        <div class="icon"><img class="icon-img" src="images/image08.jpg" alt="Wheel Brake Repair and Service"></div>
-        <h3 id="svc-wheel">Wheel Brake Repair &amp; Service</h3>
+        <div class="icon"><img class="icon-img" src="images/image11.png" alt="EV Diagnosis" style="width:100%;height:100%;object-fit:cover;border-radius:18px;background:#000;"></div>
+        <h3 id="svc-wheel">EV Diagnosis</h3>
       </div>
 
       <!-- COMPUTER DIAGNOSTICS WITH EV DIAGNOSTIC SCANNER PHOTO ICON -->
@@ -979,13 +979,13 @@
         <div class="field" style="margin-bottom:16px;">
           <label for="fservice">Service Needed</label>
           <select id="fservice">
-            <option>Engine</option>
+            <option>General Service</option>
             <option>Electrical System</option>
+            <option>Engine Overhaul</option>
             <option>AC Parts Maintenance</option>
             <option>Body Repair &amp; Painting</option>
             <option>Transmission</option>
-            <option>Wheel Brake Repair &amp; Service</option>
-            <option>Fluid Exchanges</option>
+            <option>EV Diagnosis</option>
             <option>Computer Diagnostics</option>
             <option>Not sure — general check-up</option>
           </select>
@@ -1382,13 +1382,13 @@
           <h2>Service Category Titles</h2>
           <div class="ka-sub">Rename the category titles shown on the Services section.</div>
           <div class="ka-svc-list">
-            <div class="ka-field"><label>Engine</label><input id="ka-svc-engine"></div>
+            <div class="ka-field"><label>General Service</label><input id="ka-svc-fluid"></div>
             <div class="ka-field"><label>Electrical System</label><input id="ka-svc-electrical"></div>
+            <div class="ka-field"><label>Engine Overhaul</label><input id="ka-svc-engine"></div>
             <div class="ka-field"><label>AC Parts Maintenance</label><input id="ka-svc-ac"></div>
             <div class="ka-field"><label>Body Repair &amp; Painting</label><input id="ka-svc-body"></div>
             <div class="ka-field"><label>Transmission</label><input id="ka-svc-transmission"></div>
-            <div class="ka-field"><label>Wheel Brake Repair &amp; Service</label><input id="ka-svc-wheel"></div>
-            <div class="ka-field"><label>Fluid Exchanges</label><input id="ka-svc-fluid"></div>
+            <div class="ka-field"><label>EV Diagnosis</label><input id="ka-svc-wheel"></div>
             <div class="ka-field"><label>Computer Diagnostics</label><input id="ka-svc-diagnosis"></div>
           </div>
           <div class="ka-save-bar"><button class="ka-btn ka-btn-amber" id="kaSaveServices">Save Changes</button></div>
@@ -1459,7 +1459,7 @@
     function saveAdmins(a){ localStorage.setItem(ADMINS_KEY, JSON.stringify(a)); }
     function loadContentData(){
       return JSON.parse(localStorage.getItem(KHALID_CONTENT_KEY) || 'null') || {
-        services: { engine:'Engine', electrical:'Electrical System', ac:'AC Parts Maintenance', body:'Body Repair & Painting', transmission:'Transmission', wheel:'Wheel Brake Repair & Service', fluid:'Fluid Exchanges', diagnosis:'Computer Diagnostics' },
+        services: { engine:'Engine Overhaul', electrical:'Electrical System', ac:'AC Parts Maintenance', body:'Body Repair & Painting', transmission:'Transmission', wheel:'EV Diagnosis', fluid:'General Service', diagnosis:'Computer Diagnostics' },
         gallery: ['gallery/photo-1.jpg','gallery/photo-2.jpg','gallery/photo-3.jpg','gallery/photo-4.jpg','gallery/photo-5.jpg','gallery/photo-6.jpg'],
         reviews: [],
         contact: { address:"Cross the bridge from Ayat 7, towards Ayat 49 condominium — you'll find us there.", phone:"+251 912 941 327", hours:"Monday – Saturday, 8:00 AM – 7:00 PM", tiktok:"#", instagram:"#", youtube:"#" }
