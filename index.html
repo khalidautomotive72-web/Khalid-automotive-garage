@@ -645,6 +645,24 @@
     .social-row a{ width:42px; height:42px; }
   }
 </style>
+<!-- Firebase (Firestore + Auth) so Gallery photos and the Owner Panel login work for every visitor, not just the browser that made the change -->
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBGYmaQliZJIJgJeh_KvAgQApV2LSLeChE",
+    authDomain: "khalid-auto-web.firebaseapp.com",
+    projectId: "khalid-auto-web",
+    storageBucket: "khalid-auto-web.firebasestorage.app",
+    messagingSenderId: "369540451504",
+    appId: "1:369540451504:web:0d47641194595d29534f7e5",
+    measurementId: "G-H7S409LGDW"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const kaDb = firebase.firestore();
+  const kaAuth = firebase.auth();
+</script>
 </head>
 <body>
 
@@ -1112,33 +1130,10 @@
   }, { threshold: 0.6 });
   steps.forEach(s => stepIO.observe(s));
 
-  const galleryPhotos = (siteContent && siteContent.gallery && siteContent.gallery.length) ? siteContent.gallery : [
-    "gallery/photo-1.jpg",
-    "gallery/photo-2.jpg",
-    "gallery/photo-3.jpg",
-    "gallery/photo-4.jpg",
-    "gallery/photo-5.jpg",
-    "gallery/photo-6.jpg"
-  ];
-
   const galleryGrid = document.getElementById('galleryGrid');
   const placeholderSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-4 4"/></svg>`;
 
-  galleryPhotos.forEach((src, i) => {
-    const fig = document.createElement('div');
-    fig.className = 'g-item reveal';
-    fig.innerHTML = `
-      <img src="${src}" alt="Khalid Automotive photo ${i + 1}" loading="lazy"
-           onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-      <div class="ph" style="display:none;">${placeholderSVG}<span>Photo ${i + 1}</span></div>
-      <div class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></div>
-    `;
-    fig.addEventListener('click', () => openLightbox(i));
-    galleryGrid.appendChild(fig);
-    io.observe(fig);
-  });
-
-  // Slider arrow controls
+  // Slider arrow controls (defined before the first render so updateArrows() is safe to call)
   const gPrev = document.getElementById('gPrev');
   const gNext = document.getElementById('gNext');
   function scrollByCard(delta) {
@@ -1155,7 +1150,46 @@
   gNext.addEventListener('click', () => scrollByCard(1));
   galleryGrid.addEventListener('scroll', updateArrows);
   window.addEventListener('resize', updateArrows);
-  updateArrows();
+
+  let galleryPhotos = (siteContent && siteContent.gallery && siteContent.gallery.length) ? siteContent.gallery : [
+    "gallery/photo-1.jpg",
+    "gallery/photo-2.jpg",
+    "gallery/photo-3.jpg",
+    "gallery/photo-4.jpg",
+    "gallery/photo-5.jpg",
+    "gallery/photo-6.jpg"
+  ];
+
+  // Builds (or rebuilds) the visible gallery grid from an array of photo URLs/paths.
+  // Called on first load with cached/default photos, and again once the shared
+  // Firestore copy arrives so every visitor sees the same gallery.
+  function renderGalleryGrid(photos) {
+    galleryPhotos = photos;
+    galleryGrid.innerHTML = '';
+    photos.forEach((src, i) => {
+      const fig = document.createElement('div');
+      fig.className = 'g-item reveal';
+      fig.innerHTML = `
+        <img src="${src}" alt="Khalid Automotive photo ${i + 1}" loading="lazy"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="ph" style="display:none;">${placeholderSVG}<span>Photo ${i + 1}</span></div>
+        <div class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></div>
+      `;
+      fig.addEventListener('click', () => openLightbox(i));
+      galleryGrid.appendChild(fig);
+      io.observe(fig);
+    });
+    updateArrows();
+  }
+  renderGalleryGrid(galleryPhotos);
+
+  // Fetch the shared gallery from Firestore (public read) so every visitor — not just
+  // the browser that added a photo in the Owner Panel — sees the same photos.
+  kaDb.collection('content').doc('gallery').get().then(doc => {
+    if (doc.exists && Array.isArray(doc.data().photos) && doc.data().photos.length) {
+      renderGalleryGrid(doc.data().photos);
+    }
+  }).catch(err => console.warn('Gallery Firestore fetch failed:', err));
 
   const lightbox = document.getElementById('lightbox');
   const lbImg = document.getElementById('lbImg');
@@ -1361,7 +1395,7 @@
         <div class="ka-logo">KHALID <span>· AUTOMOTIVE</span></div>
         <div class="ka-login-sub">Owner Control Panel</div>
         <div class="ka-error-msg" id="kaLoginError"></div>
-        <div class="ka-field"><label>Username</label><input id="kaLoginUser" autocomplete="username"></div>
+        <div class="ka-field"><label>Email</label><input id="kaLoginUser" type="email" autocomplete="username"></div>
         <div class="ka-field"><label>Password</label><input id="kaLoginPass" type="password" autocomplete="current-password"></div>
         <button class="ka-btn ka-btn-amber" id="kaLoginBtn">Sign In</button>
         <div class="ka-hint">This panel is never shown to site visitors and is reached only through your private link.</div>
@@ -1443,19 +1477,16 @@
   }
 
   function wireAdminPanel(root) {
-    const ADMINS_KEY = 'khalid_admins_v1';
-    const SESSION_KEY = 'khalid_session_v1';
     const $ = id => root.querySelector('#' + id);
     let currentUser = null;
 
-    function loadAdmins(){
-      let admins = JSON.parse(localStorage.getItem(ADMINS_KEY) || 'null');
-      if (!admins) {
-        admins = [{ username: 'superadmin', password: 'Khalid@2026', role: 'super' }];
-        localStorage.setItem(ADMINS_KEY, JSON.stringify(admins));
-      }
-      return admins;
-    }
+    // Admin accounts now live in Firebase Authentication (Console → Authentication → Users)
+    // instead of a hardcoded username/password in this file. To add more admins, create
+    // more users there — this panel signs in whoever Firebase Auth accepts. The "Manage
+    // Admins" tab below is hidden (Firebase Auth users can't be listed/added from client-side
+    // code without extra setup); these two stubs just keep the unused panel from erroring.
+    const ADMINS_KEY = 'khalid_admins_v1';
+    function loadAdmins(){ return JSON.parse(localStorage.getItem(ADMINS_KEY) || 'null') || []; }
     function saveAdmins(a){ localStorage.setItem(ADMINS_KEY, JSON.stringify(a)); }
     function loadContentData(){
       return JSON.parse(localStorage.getItem(KHALID_CONTENT_KEY) || 'null') || {
@@ -1473,41 +1504,41 @@
     function doLogin(){
       const u = $('kaLoginUser').value.trim();
       const p = $('kaLoginPass').value;
-      const match = loadAdmins().find(a => a.username === u && a.password === p);
       const err = $('kaLoginError');
-      if (!match) { err.textContent = 'Incorrect username or password.'; err.style.display = 'block'; return; }
       err.style.display = 'none';
-      currentUser = match;
-      sessionStorage.setItem(SESSION_KEY, JSON.stringify(match));
-      enterDashboard();
+      kaAuth.signInWithEmailAndPassword(u, p).catch(() => {
+        err.textContent = 'Incorrect email or password.';
+        err.style.display = 'block';
+      });
+      // enterDashboard() runs automatically via onAuthStateChanged below once sign-in succeeds
     }
 
     function enterDashboard(){
       $('kaLoginBox').style.display = 'none';
       $('kaDash').style.display = 'block';
-      $('kaWhoName').textContent = currentUser.username;
+      $('kaWhoName').textContent = currentUser.email;
       const tag = $('kaWhoRole');
-      tag.textContent = currentUser.role === 'super' ? 'Super Admin' : 'Admin';
-      tag.className = 'ka-role-tag ' + (currentUser.role === 'super' ? 'super' : 'admin');
-      $('kaAdminsTabBtn').style.display = currentUser.role === 'super' ? 'inline-block' : 'none';
+      tag.textContent = 'Admin';
+      tag.className = 'ka-role-tag admin';
+      $('kaAdminsTabBtn').style.display = 'none'; // manage additional admins via Firebase Console instead
       populateForms();
     }
 
     $('kaLogoutBtn').addEventListener('click', () => {
-      sessionStorage.removeItem(SESSION_KEY);
-      currentUser = null;
-      $('kaDash').style.display = 'none';
-      $('kaLoginBox').style.display = 'block';
-      $('kaLoginUser').value = ''; $('kaLoginPass').value = '';
+      kaAuth.signOut();
     });
 
-    (function resume(){
-      const saved = JSON.parse(sessionStorage.getItem(SESSION_KEY) || 'null');
-      if (saved) {
-        const stillValid = loadAdmins().find(a => a.username === saved.username && a.password === saved.password);
-        if (stillValid) { currentUser = stillValid; enterDashboard(); }
+    kaAuth.onAuthStateChanged(user => {
+      if (user) {
+        currentUser = user;
+        enterDashboard();
+      } else {
+        currentUser = null;
+        $('kaDash').style.display = 'none';
+        $('kaLoginBox').style.display = 'block';
+        $('kaLoginUser').value = ''; $('kaLoginPass').value = '';
       }
-    })();
+    });
 
     root.querySelectorAll('.ka-tab-btn').forEach(btn => {
       btn.addEventListener('click', () => {
@@ -1527,7 +1558,11 @@
       $('ka-cTiktok').value = c.contact.tiktok;
       $('ka-cInstagram').value = c.contact.instagram;
       $('ka-cYoutube').value = c.contact.youtube;
-      renderGalleryFields(c.gallery);
+      $('kaGalleryList').innerHTML = '<div class="ka-sub">Loading current photos from the shared gallery…</div>';
+      kaDb.collection('content').doc('gallery').get().then(doc => {
+        const photos = (doc.exists && Array.isArray(doc.data().photos)) ? doc.data().photos : c.gallery;
+        renderGalleryFields(photos);
+      }).catch(() => renderGalleryFields(c.gallery));
       renderReviewFields(c.reviews);
       renderAdminsList();
     }
@@ -1541,6 +1576,30 @@
       saveContentData(c); flashSaved('ka-saved-services');
     });
 
+    // Resizes/compresses an uploaded photo before it's stored in Firestore, since a
+    // Firestore document has a 1MB total size limit shared across all photos in the
+    // gallery. Full-resolution phone photos would blow past that almost immediately.
+    function compressImageFile(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = e => {
+          const img = new Image();
+          img.onload = () => {
+            const maxW = 1000;
+            const scale = Math.min(1, maxW / img.width);
+            const canvas = document.createElement('canvas');
+            canvas.width = img.width * scale;
+            canvas.height = img.height * scale;
+            canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+            resolve(canvas.toDataURL('image/jpeg', 0.65));
+          };
+          img.onerror = reject;
+          img.src = e.target.result;
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
     function renderGalleryFields(list){ $('kaGalleryList').innerHTML = ''; list.forEach(src => addGalleryField(src)); }
     function addGalleryField(value){
       const card = document.createElement('div');
@@ -1562,14 +1621,12 @@
       fileInput.addEventListener('change', () => {
         const file = fileInput.files[0];
         if (!file) return;
-        const reader = new FileReader();
-        reader.onload = e => {
-          card.dataset.dataUrl = e.target.result;
+        compressImageFile(file).then(dataUrl => {
+          card.dataset.dataUrl = dataUrl;
           urlInput.value = '';
-          preview.src = e.target.result;
+          preview.src = dataUrl;
           preview.style.display = 'block';
-        };
-        reader.readAsDataURL(file);
+        });
       });
       urlInput.addEventListener('input', () => {
         if (urlInput.value.trim()) {
@@ -1583,6 +1640,7 @@
     }
     $('kaAddGallery').addEventListener('click', () => addGalleryField(''));
     $('kaSaveGallery').addEventListener('click', () => {
+      const saveBtn = $('kaSaveGallery');
       const cards = Array.from(root.querySelectorAll('#kaGalleryList .ka-item-card'));
       const vals = cards.map(card => {
         const dataUrl = card.dataset.dataUrl;
@@ -1590,7 +1648,19 @@
         const input = card.querySelector('.ka-g-input');
         return input.value.trim();
       }).filter(Boolean);
-      const c = loadContentData(); c.gallery = vals; saveContentData(c); flashSaved('ka-saved-gallery');
+      saveBtn.disabled = true; saveBtn.textContent = 'Saving…';
+      // Saved to Firestore (not localStorage) so every visitor sees the same gallery,
+      // not just this browser. Requires being signed in — Firestore rules reject
+      // anonymous writes.
+      kaDb.collection('content').doc('gallery').set({ photos: vals })
+        .then(() => {
+          renderGalleryGrid(vals); // reflect the change on this page immediately too
+          flashSaved('ka-saved-gallery');
+        })
+        .catch(err => {
+          alert('Could not save to the shared gallery: ' + err.message);
+        })
+        .finally(() => { saveBtn.disabled = false; saveBtn.textContent = 'Save Changes'; });
     });
 
     function renderReviewFields(list){ $('kaReviewsList').innerHTML = ''; list.forEach(r => addReviewField(r)); }
