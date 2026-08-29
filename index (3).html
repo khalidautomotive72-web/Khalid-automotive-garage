@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Khalid Automotive — Addis Ababa</title>
+<meta name="description" content="Kalid Garage (ካሊድ ጋራጅ) — Khalid Automotive, the best garage in Addis Ababa for reliable auto repair in the Ayat area. Engine, electrical, AC, transmission and brake service on EV, hybrid, and petrol/diesel vehicles. Honest pricing, expert technicians.">
+<meta name="keywords" content="Kalid Garage, ካሊድ ጋራጅ, best garage Addis Ababa, auto repair Addis Ababa, car service Ayat, Khalid Automotive, garage Addis Ababa, EV repair Ethiopia, car maintenance Addis Ababa, vehicle diagnostics">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="android-chrome-512x512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "Khalid Automotive",
+  "alternateName": ["Kalid Garage", "ካሊድ ጋራጅ", "Khalid Garage"],
+  "image": "https://salihnurhamza-cpu.github.io/hamzi/android-chrome-512x512.png",
+  "url": "https://salihnurhamza-cpu.github.io/hamzi/",
+  "telephone": "+251912941327",
+  "priceRange": "$$",
+  "description": "Reliable auto repair in the Ayat area of Addis Ababa for engine, electrical, AC, transmission and brake service on EV, hybrid, and petrol/diesel vehicles.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Cross the bridge from Ayat 7, towards Ayat 49 condominium",
+    "addressLocality": "Addis Ababa",
+    "addressRegion": "Addis Ababa",
+    "addressCountry": "ET"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "08:00",
+    "closes": "19:00"
+  },
+  "sameAs": []
+}
+</script>
+<style>
+  :root{
+    --ink:#0B132B;
+    --graphite:#111B36;
+    --graphite-2:#111B36;
+    --steel:#111B36;
+    --line:rgba(167,176,192,.28);
+    --paper:#FFFFFF;
+    --paper-2:rgba(167,176,192,.35);
+    --muted:#A7B0C0;
+    --muted-dark:#69728A;
+    --amber:#39FF88;
+    --amber-deep:#2BE07A;
+    --blue:#39FF88;
+    --font-display: 'Oswald', sans-serif;
+    --font-body: 'Work Sans', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    font-family: var(--font-body);
+    background: var(--ink);
+    color: var(--paper);
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+  img,svg{ display:block; max-width:100%; }
+  a{ color:inherit; text-decoration:none; }
+  ul{ list-style:none; }
+  button{ font-family:inherit; cursor:pointer; }
+
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 28px; }
+
+  .eyebrow{
+    font-family: var(--font-mono);
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color: var(--blue);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px; height:2px;
+    background: var(--blue);
+    display:inline-block;
+  }
+  .ev-tags{
+    display:flex; flex-wrap:wrap; gap:12px 14px; margin-bottom:20px;
+  }
+  .ev-tag{
+    position:relative; overflow:hidden;
+    font-family: var(--font-mono); font-size:14px; letter-spacing:.02em;
+    font-weight:700; padding:9px 16px 9px 14px; border-radius:30px;
+    display:inline-flex; align-items:center; gap:7px;
+    background: rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.14);
+    backdrop-filter: blur(6px);
+    animation: tagFloat 3.6s ease-in-out infinite;
+  }
+  .ev-tag::before{
+    content:''; position:absolute; inset:0; border-radius:30px; padding:1.5px;
+    background: conic-gradient(from var(--ang,0deg), #39FF88, #17E0A6, #22C1E8, #39FF88);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    animation: tagSpin 3.5s linear infinite;
+    opacity:.85;
+  }
+  .ev-tag::after{
+    content:''; position:absolute; top:0; left:-60%; width:40%; height:100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,.55), transparent);
+    transform: skewX(-20deg);
+    animation: tagShine 2.6s ease-in-out infinite;
+  }
+  .ev-tag b{
+    font-size:15px; letter-spacing:.03em;
+    background: linear-gradient(90deg, #39FF88, #17E0A6, #22C1E8, #39FF88);
+    background-size:300% auto; -webkit-background-clip:text; background-clip:text; color:transparent;
+    animation: tagGradient 3.5s linear infinite;
+    text-shadow: none;
+  }
+  .ev-tag span.ev-desc{ color: var(--paper); opacity:.85; font-weight:500; }
+  .ev-tag span.ev-desc::before{ content:'– '; opacity:.6; }
+  .ev-tag:nth-child(1){ animation-delay:0s; }
+  .ev-tag:nth-child(2){ animation-delay:.3s; }
+  .ev-tag:nth-child(3){ animation-delay:.6s; }
+  @keyframes tagGradient{ to{ background-position:300% center; } }
+  @keyframes tagSpin{ to{ --ang:360deg; } }
+  @keyframes tagShine{ 0%{ left:-60%; } 55%,100%{ left:130%; } }
+  @keyframes tagFloat{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-3px); } }
+  @property --ang{ syntax:'<angle>'; inherits:false; initial-value:0deg; }
+
+  /* ---------- BOOKING SEND CHOICE ---------- */
+  .send-choice{ display:flex; gap:12px; flex-wrap:wrap; }
+  .send-choice .btn{ flex:1; min-width:180px; text-align:center; display:flex; align-items:center; justify-content:center; }
+  .send-choice .btn-ghost{ border-color:#29A9EA; color:#29A9EA; }
+  .send-choice .btn-ghost:hover{ background:rgba(41,169,234,.1); }
+  .btn-whatsapp{ background:#25D366 !important; color:#fff !important; border:none; }
+  .btn-whatsapp::after{ display:none; }
+  .btn-whatsapp:hover{ background:#20BD5A !important; color:#fff !important; box-shadow:0 8px 20px rgba(37,211,102,.45); }
+  @media (max-width:680px){ .send-choice{ flex-direction:column; } .send-choice .btn{ width:100%; } }
+
+  /* ---------- FLOATING WHATSAPP ---------- */
+  #waFloat{
+    position:fixed; right:20px; bottom:20px; z-index:200;
+    width:72px; height:72px; border-radius:50%;
+    background:#fff; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 24px rgba(0,0,0,.4), 0 0 0 4px rgba(37,211,102,.15);
+    transition: transform .2s ease, box-shadow .2s ease;
+    animation: waPulse 2.4s ease-in-out infinite;
+  }
+  #waFloat svg{ width:46px; height:46px; }
+  #waFloat:hover{ transform: scale(1.08); box-shadow:0 10px 28px rgba(0,0,0,.5), 0 0 0 6px rgba(37,211,102,.2); }
+  @keyframes waPulse{ 0%,100%{ box-shadow:0 8px 24px rgba(0,0,0,.4), 0 0 0 4px rgba(37,211,102,.15); } 50%{ box-shadow:0 8px 24px rgba(0,0,0,.4), 0 0 0 9px rgba(37,211,102,.06); } }
+  @media (prefers-reduced-motion: reduce){ #waFloat{ animation:none; } }
+  @media (max-width:680px){ #waFloat{ right:14px; bottom:14px; width:64px; height:64px; } #waFloat svg{ width:40px; height:40px; } }
+
+  h1,h2,h3{ font-family: var(--font-display); text-transform:uppercase; letter-spacing:.01em; }
+
+  /* ---------- NAV ---------- */
+  .call-banner{
+    position:fixed; top:0; left:0; right:0; z-index:101; height:54px; box-sizing:border-box;
+    background: linear-gradient(90deg, #39FF88, #22C1E8, #39FF88);
+    background-size: 300% auto;
+    animation: bannerFlow 6s linear infinite;
+    padding:0 28px;
+    display:flex; align-items:center; justify-content:center; gap:16px;
+    font-weight:700; color: var(--ink);
+    font-size:15px;
+    box-shadow: 0 4px 16px rgba(57,255,136,.35);
+    cursor:pointer; transition: opacity .2s;
+    overflow:hidden;
+  }
+  .call-banner::after{
+    content:''; position:absolute; top:0; left:-60%; width:40%; height:100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,.6), transparent);
+    transform: skewX(-20deg);
+    animation: bannerShine 2.8s ease-in-out infinite;
+  }
+  @keyframes bannerFlow{ to{ background-position: 300% center; } }
+  @keyframes bannerShine{ 0%{ left:-60%; } 55%,100%{ left:130%; } }
+  @media (prefers-reduced-motion: reduce){ .call-banner{ animation:none; } .call-banner::after{ display:none; } }
+  .call-banner:hover{ opacity:.9; }
+  .call-banner strong{
+    text-decoration:underline; font-weight:700;
+  }
+  .call-icon{
+    width:18px; height:18px; flex-shrink:0; color: var(--ink);
+    animation: ringWiggle 2.2s ease-in-out infinite;
+    transform-origin: 70% 30%;
+  }
+  @keyframes ringWiggle{
+    0%, 70%, 100%{ transform: rotate(0deg); }
+    75%{ transform: rotate(-14deg); }
+    80%{ transform: rotate(12deg); }
+    85%{ transform: rotate(-10deg); }
+    90%{ transform: rotate(6deg); }
+    95%{ transform: rotate(0deg); }
+  }
+  @media (prefers-reduced-motion: reduce){ .call-icon{ animation:none; } }
+  
+  header{
+    position:fixed; top:54px; left:0; right:0; z-index:100;
+    background: rgba(11,19,43,.72);
+    backdrop-filter: blur(10px);
+    border-bottom:1px solid transparent;
+    transition: border-color .3s ease, background .3s ease;
+  }
+  header.scrolled{ background: rgba(11,19,43,.94); border-bottom-color: var(--line); }
+  nav{
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; row-gap:14px;
+    padding:16px 28px; max-width:1180px; margin:0 auto;
+  }
+  .logo{
+    font-family: var(--font-display); font-weight:700; font-size:24px;
+    color: var(--paper); letter-spacing:.03em; display:flex; flex-direction:column; gap:0;
+  }
+  .logo .logo-top{ display:flex; align-items:center; gap:8px; }
+  .logo span{ color: var(--blue); }
+  .logo-am{
+    font-family: var(--font-body); font-weight:700; font-size:18px; letter-spacing:.02em;
+    color: var(--amber); text-transform:none; margin-top:4px;
+  }
+  .foot-logo .logo-top{ font-size:26px; }
+  .foot-logo-am{
+    font-size:20px !important; font-weight:700; color: var(--amber) !important; margin-top:6px !important;
+  }
+  .nav-links{ display:flex; gap:28px; align-items:center; flex-wrap:wrap; }
+  .nav-links a{
+    font-family: var(--font-body); font-size:14.5px; font-weight:700; letter-spacing:.02em; text-transform:none;
+    color: var(--paper); position:relative; padding:4px 0; transition:color .25s;
+  }
+  .nav-links a:hover{ color: var(--blue); }
+  .nav-links a.btn-primary, .nav-links a.btn-primary:hover{ color:#000; }
+  .nav-links a::after{
+    content:""; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--blue);
+    transition:width .25s ease;
+  }
+  .nav-links a:hover::after{ width:100%; }
+  .btn{
+    font-family: var(--font-mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase;
+    padding:12px 22px; border-radius:2px; border:1px solid transparent; display:inline-block;
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+  }
+  .btn-primary{
+    position:relative; overflow:hidden; text-align:center;
+    background: linear-gradient(90deg, #C89A2E, #FFE07A, #FFD24C, #C89A2E);
+    background-size:300% auto;
+    animation: btnGoldFlow 5s linear infinite;
+    color:#000; font-weight:800;
+    font-family: var(--font-display); font-size:14px; letter-spacing:.05em;
+  }
+  .btn-primary .btn-am{
+    display:block; font-family:var(--font-body); font-weight:800; text-transform:none;
+    font-size:13px; letter-spacing:0; margin-top:4px; direction:ltr;
+  }
+  .btn-primary::after{
+    content:''; position:absolute; top:0; left:-60%; width:40%; height:100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,.7), transparent);
+    transform: skewX(-20deg);
+    animation: btnPrimaryShine 2.6s ease-in-out infinite;
+  }
+  @keyframes btnGoldFlow{ to{ background-position:300% center; } }
+  @keyframes btnPrimaryShine{ 0%{ left:-60%; } 55%,100%{ left:130%; } }
+  @media (prefers-reduced-motion: reduce){ .btn-primary{ animation:none; } .btn-primary::after{ display:none; } }
+  .btn-primary:hover{ background: linear-gradient(90deg, #D6AA3A, #FFE896, #FFDB63, #D6AA3A); background-size:300% auto; transform: translateY(-2px); box-shadow:0 8px 20px rgba(255,210,76,.45); color:#000; }
+  .btn-ghost{ border-color: var(--line); color: var(--paper); }
+  .btn-ghost:hover{ border-color: var(--blue); color: var(--blue); }
+
+  .burger{ display:none; flex-direction:column; gap:5px; background:none; border:none; padding:6px; }
+  .burger span{ width:24px; height:2px; background:var(--paper); display:block; }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background: linear-gradient(180deg, var(--graphite) 0%, var(--ink) 100%);
+    padding:220px 0 90px;
+    color: var(--paper);
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(255,255,255,.035) 0 1px, transparent 1px 64px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,.035) 0 1px, transparent 1px 64px);
+    mask-image: radial-gradient(ellipse at 70% 20%, black 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .hero-grid{ position:relative; display:grid; grid-template-columns:1.3fr .9fr; gap:60px; align-items:start; }
+  .hero h1{
+    font-size: clamp(44px, 6.4vw, 84px);
+    line-height:.96;
+    font-weight:700;
+    color: var(--paper);
+  }
+  .hero h1 em{ font-style:normal; color: var(--blue); }
+  .hero .sub{
+    margin-top:22px; max-width:480px; color: var(--muted); font-size:17px;
+  }
+  .hero .sub-am{
+    margin-top:8px; font-size:15px; color:var(--muted); direction:ltr;
+  }
+  .hero-actions{ display:flex; gap:16px; margin-top:56px; flex-wrap:wrap; }
+
+  .dial-row{ display:flex; gap:14px; margin-top:64px; }
+  .dial{ text-align:center; }
+  .dial svg{ width:104px; height:104px; }
+  .dial-track{ fill:none; stroke:#1B2747; stroke-width:7; }
+  .dial-fill{ fill:none; stroke:var(--blue); stroke-width:7; stroke-linecap:round; stroke-dasharray:301; stroke-dashoffset:301; transform:rotate(-90deg); transform-origin:52px 52px; transition:stroke-dashoffset 1.4s cubic-bezier(.16,.84,.44,1); }
+  .dial-num{ font-family:var(--font-display); font-size:22px; font-weight:700; fill:var(--paper); }
+  .dial-label{ font-family: var(--font-mono); font-size:10.5px; letter-spacing:.05em; color:var(--muted); margin-top:6px; text-transform:uppercase; }
+
+  .hero-visual{ position:relative; }
+  .plate{
+    aspect-ratio: 4/5; border-radius:6px; position:relative; overflow:hidden;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(57,255,136,.16), transparent 55%),
+      linear-gradient(160deg, var(--steel), var(--graphite-2));
+    border:1px solid var(--line);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .plate svg{ width:56%; opacity:.9; }
+  .plate-tag{
+    position:absolute; bottom:18px; left:18px; right:18px;
+    font-family:var(--font-mono); font-size:11px; color:var(--muted);
+    display:flex; justify-content:space-between; letter-spacing:.05em;
+    border-top:1px solid var(--line); padding-top:12px;
+  }
+
+  /* ---------- ROAD DIVIDER ---------- */
+  .road{ height:34px; position:relative; overflow:hidden; }
+  .road svg{ width:200%; height:100%; animation: roll 14s linear infinite; }
+  @media (prefers-reduced-motion:reduce){ .road svg{ animation:none; } }
+  @keyframes roll{ from{ transform:translateX(0);} to{ transform:translateX(-50%);} }
+  .road.on-dark svg .line{ stroke:#3A434F; }
+  .road.on-light svg .line{ stroke:var(--line); }
+
+  /* ---------- SECTION generic ---------- */
+  section{ padding:100px 0; }
+  .section-head{ max-width:640px; margin-bottom:56px; }
+  .section-head h2{ font-size: clamp(32px,4vw,48px); }
+  .on-dark{ background: var(--graphite); color: var(--paper); }
+  .on-dark .muted{ color: var(--muted); }
+  .on-light .muted{ color:var(--muted); }
+
+  /* ---------- ABOUT ---------- */
+  .about-grid{ display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:start; }
+  .about-copy p{ color:var(--muted); max-width:480px; margin-bottom:18px; }
+  .about-list{ margin-top:20px; display:flex; flex-direction:column; gap:18px; }
+  .about-list li{ display:flex; gap:14px; align-items:flex-start; font-family:var(--font-body); }
+  .about-list .mark{
+    flex:none; width:24px; height:24px; border-radius:50%; background:#FFD24C;
+    display:flex; align-items:center; justify-content:center; margin-top:2px;
+    box-shadow: 0 0 0 4px rgba(255,210,76,.18);
+  }
+  .about-list .mark svg{ width:13px; height:13px; }
+  .about-list .item-title{ display:block; font-size:15.5px; font-weight:700; color:var(--paper); letter-spacing:.01em; margin-bottom:3px; }
+  .about-list .item-desc{ display:block; font-size:14px; color:var(--muted); line-height:1.55; }
+  .about-list .item-body{ display:flex; flex-direction:column; padding-top:1px; }
+  .about-panel{
+    background: #FFFFFF; border-radius:6px; padding:38px; color:var(--ink);
+    position:relative; overflow:hidden; box-sizing:border-box; min-width:0;
+    display:flex; flex-direction:column; justify-content:center; min-height:200px;
+  }
+  .about-panel .quote-mark{ font-family:var(--font-display); font-size:64px; color:var(--amber-deep); line-height:1; }
+  .about-panel p{ width:100%; box-sizing:border-box; overflow-wrap:break-word; word-wrap:break-word; font-size:24px; font-weight:800; line-height:1.35; margin-top:2px; color:var(--ink); max-width:420px; }
+  .about-panel .sig{ margin-top:24px; font-family:var(--font-mono); font-size:12px; color:#555; letter-spacing:.05em; }
+
+  /* ---------- SERVICES ---------- */
+  .svc-grid{ display:flex; flex-direction:column; gap:1px; background:var(--line); border:1px solid var(--line); }
+  .svc-card{
+    background: var(--graphite); padding:22px 30px; display:flex; align-items:center; gap:22px;
+    transition: transform .3s ease, background .3s ease;
+  }
+  .svc-card:hover{ background:#182642; transform: translateX(4px); }
+  .svc-card .icon{
+    width:72px; height:72px; border-radius:20px; margin-bottom:0; flex-shrink:0;
+    background: linear-gradient(145deg, #182645, #0a1124);
+    box-shadow:
+      5px 8px 20px rgba(0,0,0,.4),
+      inset 1px 1px 2px rgba(255,255,255,.15),
+      0 0 0 1px rgba(255,255,255,.05);
+    display:flex; align-items:center; justify-content:center; position:relative;
+    overflow:hidden;
+    transition: box-shadow .3s ease, transform .3s ease;
+  }
+  .svc-card .icon img.icon-img{
+    width:100%; height:100%; object-fit:cover; border-radius:18px;
+    transition: transform .3s ease;
+    filter: brightness(1.05) contrast(1.05) saturate(1.1);
+  }
+  .svc-card:hover .icon img.icon-img{
+    transform: scale(1.08);
+    filter: brightness(1.15) contrast(1.1) saturate(1.2);
+  }
+  .svc-card:hover .icon{
+    box-shadow:
+      0 12px 25px rgba(57,255,136,.35),
+      inset 1px 1px 3px rgba(255,255,255,.3),
+      0 0 0 1px var(--blue);
+    transform: scale(1.05);
+  }
+  .svc-card .icon svg{ width:46px; height:46px; position:relative; z-index:1; filter: drop-shadow(0 3px 6px rgba(57,255,136,.35)); }
+  .svc-card h3{ font-size:19px; color:var(--paper); margin-bottom:0; letter-spacing:.02em; }
+  .svc-card ul{ display:flex; flex-direction:column; gap:8px; }
+  .svc-card li{ font-size:13.5px; color:var(--muted); padding-left:16px; position:relative; }
+  .svc-card li::before{ content:"—"; position:absolute; left:0; color:var(--muted-dark); }
+
+  /* ---------- GALLERY (SLIDER) ---------- */
+  .gallery-slider{ position:relative; }
+  .gallery-track{
+    display:flex; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory;
+    padding-bottom:6px; scrollbar-width:none; -ms-overflow-style:none;
+  }
+  .gallery-track::-webkit-scrollbar{ display:none; }
+  .g-item{
+    position:relative; flex:0 0 auto; width:380px; aspect-ratio:4/3; border-radius:6px; overflow:hidden;
+    border:1px solid var(--line); background:var(--graphite-2); cursor:pointer; scroll-snap-align:start;
+  }
+  .gallery-arrows{ display:flex; gap:10px; justify-content:flex-end; margin-top:18px; }
+  .g-arrow{
+    width:44px; height:44px; border-radius:50%; background:rgba(255,255,255,.06);
+    border:1px solid var(--line); color:var(--paper); display:flex; align-items:center; justify-content:center;
+    transition:background .2s ease, border-color .2s ease, transform .2s ease;
+  }
+  .g-arrow:hover{ background:rgba(255,255,255,.14); border-color:var(--blue); }
+  .g-arrow:active{ transform:scale(.94); }
+  .g-arrow svg{ width:18px; height:18px; }
+  .g-arrow[disabled]{ opacity:.35; pointer-events:none; }
+  @media (max-width:600px){ .g-item{ width:220px; } }
+  .g-item img{ width:100%; height:100%; object-fit:cover; display:block; transition:transform .45s ease; }
+  .g-item:hover img{ transform:scale(1.07); }
+  .g-item .ph{
+    position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    gap:10px; color:var(--muted); background:
+      radial-gradient(circle at 30% 20%, rgba(57,255,136,.10), transparent 60%), var(--graphite-2);
+  }
+  .g-item .ph svg{ width:30px; height:30px; opacity:.8; }
+  .g-item .ph span{ font-family:var(--font-mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase; }
+  .g-item .zoom{
+    position:absolute; top:10px; right:10px; width:30px; height:30px; border-radius:50%;
+    background:rgba(0,0,0,.45); display:flex; align-items:center; justify-content:center;
+    opacity:0; transition:opacity .25s ease;
+  }
+  .g-item:hover .zoom{ opacity:1; }
+  .g-item .zoom svg{ width:14px; height:14px; color:#fff; }
+
+  .lightbox{
+    position:fixed; inset:0; background:rgba(6,9,20,.94); z-index:300;
+    display:none; align-items:center; justify-content:center; padding:60px 24px;
+  }
+  .lightbox.open{ display:flex; }
+  .lightbox img{ max-width:90vw; max-height:84vh; border-radius:6px; box-shadow:0 20px 60px rgba(0,0,0,.5); }
+  .lb-close{
+    position:absolute; top:20px; right:24px; width:42px; height:42px; border-radius:50%;
+    background:rgba(255,255,255,.08); border:1px solid var(--line); color:var(--paper);
+    font-size:22px; line-height:1; display:flex; align-items:center; justify-content:center;
+  }
+  .lb-nav{
+    position:absolute; top:50%; transform:translateY(-50%); width:46px; height:46px; border-radius:50%;
+    background:rgba(255,255,255,.08); border:1px solid var(--line); color:var(--paper); font-size:16px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .lb-prev{ left:20px; } .lb-next{ right:20px; }
+  @media (max-width:600px){ .lb-nav{ width:38px; height:38px; } .lb-prev{ left:8px; } .lb-next{ right:8px; } }
+
+  /* ---------- PROCESS ---------- */
+  .process-track{ position:relative; margin-top:20px; }
+  .process-line{ position:absolute; top:28px; left:0; right:0; height:2px; background: repeating-linear-gradient(90deg, var(--paper-2) 0 10px, transparent 10px 20px); z-index:0; }
+  .process-steps{ position:relative; z-index:1; display:grid; grid-template-columns:repeat(6,1fr); gap:18px; }
+  .p-step{ text-align:left; }
+  .p-step .n{
+    width:56px; height:56px; border-radius:50%; background: var(--paper); border:2px solid var(--ink);
+    display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-weight:700; font-size:15px;
+    margin-bottom:18px; transition: background .3s, color .3s, border-color .3s;
+  }
+  .p-step.active .n{ background: var(--amber); border-color:var(--amber); color:var(--ink); }
+  .p-step h3{ font-size:14.5px; text-transform:none; font-family:var(--font-body); font-weight:600; margin-bottom:6px; letter-spacing:0; }
+  .p-step p{ font-size:12.5px; color:var(--muted); }
+
+  /* ---------- REVIEWS ---------- */
+  .rev-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .rev-card{
+    background: var(--graphite-2); border:1px solid var(--line); border-radius:6px; padding:30px;
+  }
+  .stars{ display:flex; gap:4px; margin-bottom:16px; color:#FFD24C; font-size:15px; letter-spacing:2px; }
+  .stars svg{ width:15px; height:15px; color:#FFD24C; }
+  .rev-card p{ color:var(--muted); font-size:14.5px; margin-bottom:20px; }
+  .rev-who{ font-family:var(--font-mono); font-size:12px; color:var(--muted); border-top:1px solid var(--line); padding-top:14px; }
+  .rev-note{ margin-top:30px; font-size:13px; color:var(--muted); font-family:var(--font-mono); }
+
+  .rev-submit{
+    margin-top:44px; background: #FFFFFF; border-radius:8px; padding:40px 44px; max-width:560px;
+  }
+  .rev-submit h3{ font-size:20px; color:var(--ink); margin-bottom:6px; }
+  .rev-submit .muted{ color:#555; font-size:14px; margin-bottom:20px; }
+  .rev-star-input{ display:flex; gap:8px; margin-bottom:22px; }
+  .rev-star-input svg{
+    width:30px; height:30px; color:rgba(11,19,43,.2); cursor:pointer; transition: color .15s ease, transform .15s ease;
+  }
+  .rev-star-input svg:hover{ transform: scale(1.15); }
+  .rev-star-input svg.on{ color:#FFD24C; }
+  .rev-submit button{ padding:14px 30px; }
+  .rev-submit .field label{ color:#555; }
+  .rev-submit .field input, .rev-submit .field textarea{
+    background:#F4F6FA; border:1px solid #D5DAE3; color:#0B132B; font-weight:700;
+  }
+  .rev-submit .field input:focus, .rev-submit .field textarea:focus{ border-color:var(--amber-deep); }
+  .rev-submit .field input::placeholder, .rev-submit .field textarea::placeholder{ color:#8A93A6; font-weight:500; }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{ display:grid; grid-template-columns:.85fr 1.15fr; gap:70px; }
+  .c-item{ display:flex; gap:16px; margin-bottom:28px; }
+  .c-item .ic{ flex:none; width:38px; height:38px; border-radius:50%; background:var(--graphite); display:flex; align-items:center; justify-content:center; }
+  .c-item .ic svg{ width:17px; height:17px; color:#FFD24C; }
+  .c-item h4{ font-family:var(--font-body); font-weight:600; font-size:14px; text-transform:uppercase; letter-spacing:.04em; margin-bottom:4px; color:var(--paper);}
+  .c-item p{ font-size:14.5px; color:var(--muted); }
+  .social-row{ display:flex; gap:12px; margin-top:8px; }
+  .social-row a{
+    width:38px; height:38px; border-radius:50%; border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
+    transition: border-color .2s, background .2s;
+  }
+  .social-row a svg{ width:16px; height:16px; color:var(--paper); }
+  .social-row a:hover{ background:var(--ink); border-color:var(--ink); }
+  .social-row a:hover svg{ color:var(--blue); }
+  .map-embed{ margin-top:8px; border-radius:8px; overflow:hidden; border:1px solid var(--line); }
+  .map-embed iframe{ display:block; }
+
+  .form-panel{ background: #FFFFFF; border-radius:8px; padding:44px; color:var(--ink); }
+  .form-panel h3{ font-size:22px; margin-bottom:8px; }
+  .form-panel .muted{ color:#555; font-size:14px; margin-bottom:30px; }
+  .f-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+  .field{ display:flex; flex-direction:column; gap:8px; }
+  .field label{ font-family:var(--font-mono); font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#555; }
+  .field input, .field select, .field textarea{
+    background: #F4F6FA; border:1px solid #D5DAE3; border-radius:3px; padding:12px 14px;
+    color:#0B132B; font-family:var(--font-body); font-size:14px; font-weight:700; outline:none; transition:border-color .2s;
+  }
+  .field input::placeholder, .field textarea::placeholder{ color:#8A93A6; font-weight:500; }
+  .field input:focus, .field select:focus, .field textarea:focus{ border-color:var(--amber-deep); }
+  .field textarea{ resize:vertical; min-height:90px; }
+  .form-panel button{ width:100%; margin-top:8px; padding:15px; border:none; }
+  .form-note{ margin-top:16px; font-size:12.5px; color:#555; display:none; }
+  .form-note.show{ display:block; color:var(--blue); font-family:var(--font-mono); }
+
+  /* ---------- FOOTER ---------- */
+  footer{ background:var(--ink); color:var(--muted); padding:50px 0 26px; }
+  .foot-top{ display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; padding-bottom:36px; border-bottom:1px solid var(--line); }
+  .foot-links{ display:flex; gap:28px; flex-wrap:wrap; }
+  .foot-links a{ font-family:var(--font-mono); font-size:12px; letter-spacing:.05em; text-transform:uppercase; color:var(--muted); }
+  .foot-links a:hover{ color:var(--paper); }
+  .foot-bottom{ display:flex; justify-content:space-between; padding-top:22px; font-size:12px; font-family:var(--font-mono); flex-wrap:wrap; gap:10px; }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce){ .reveal{ opacity:1; transform:none; transition:none; } }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width: 980px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-visual{ display:none; }
+    .about-grid{ grid-template-columns:1fr; gap:40px; }
+    .process-steps{ grid-template-columns:repeat(3,1fr); row-gap:36px; }
+    .process-line{ display:none; }
+    .contact-grid{ grid-template-columns:1fr; }
+    .rev-grid{ grid-template-columns:1fr; }
+  }
+  @media (max-width: 680px){
+    .wrap{ padding:0 20px; }
+    nav{ padding:14px 18px; }
+    .call-banner{ height:54px; padding:0 14px; font-size:12.5px; gap:8px; }
+    .logo{ font-size:21px; gap:8px; }
+    .logo-am{ font-size:17px; }
+    .logo-wrap img{ width:36px; height:36px; }
+    .foot-logo-am{ font-size:16px !important; }
+    .nav-links{ position:fixed; top:60px; left:0; right:0; background:rgba(11,19,43,.98); flex-direction:column; align-items:flex-start; padding:26px 22px; gap:20px; transform:translateY(-20px); opacity:0; visibility:hidden; transition:transform .3s ease, opacity .3s ease, visibility .3s ease; border-bottom:1px solid var(--line); max-height:calc(100vh - 60px); overflow-y:auto; z-index:150; }
+    .nav-links.open{ transform:translateY(0); opacity:1; visibility:visible; }
+    .nav-links a{ font-family: var(--font-body); font-size:16px; font-weight:600; letter-spacing:.01em; text-transform:none; }
+    .nav-links .btn{ width:100%; text-align:center; margin-top:6px; }
+    .burger{ display:flex; }
+
+    .hero{ padding:210px 0 60px; }
+    .hero .sub{ font-size:15.5px; }
+    .ev-tags{ flex-direction:column; align-items:flex-start; gap:10px; margin-bottom:24px; }
+    .ev-tag{ font-size:13px; padding:10px 16px; width:100%; box-sizing:border-box; }
+    .ev-tag b{ font-size:14px; }
+    .hero-actions{ flex-direction:column; align-items:stretch; margin-top:44px; }
+    .hero-actions .btn{ text-align:center; }
+
+    .dial-row{ justify-content:space-between; gap:8px; }
+    .dial{ flex:1; }
+    .dial svg{ width:100%; height:auto; max-width:82px; margin:0 auto; }
+    .dial-label{ font-size:9px; }
+
+    section{ padding:64px 0; }
+    .section-head{ margin-bottom:36px; }
+    .section-head h2{ font-size:28px; }
+
+    .about-panel{ padding:28px; }
+    .about-panel .quote-mark{ font-size:48px; }
+    .about-panel p{ font-size:20px; }
+
+    .svc-card{ padding:18px 20px; gap:16px; }
+    .svc-card .icon{ width:60px; height:60px; border-radius:16px; }
+    .svc-card .icon svg{ width:36px; height:36px; }
+    .svc-card h3{ font-size:16px; }
+
+    .gallery-track{ gap:10px; }
+    .g-item{ width:300px; }
+    .lightbox{ padding:70px 12px; }
+
+    .process-steps{ grid-template-columns:repeat(2,1fr); row-gap:30px; column-gap:14px; }
+    .p-step .n{ width:44px; height:44px; font-size:13px; margin-bottom:12px; }
+    .p-step h3{ font-size:13.5px; }
+    .p-step p{ font-size:12px; }
+
+    .rev-card{ padding:24px; }
+
+    .form-panel{ padding:26px 22px; }
+    .f-row{ grid-template-columns:1fr; gap:14px; }
+
+    .foot-top{ flex-direction:column; align-items:flex-start; }
+    .foot-bottom{ flex-direction:column; gap:6px; }
+  }
+
+  @media (max-width: 400px){
+    .hero h1{ font-size:clamp(34px,10vw,44px); }
+    .dial-num{ font-size:18px; }
+    .process-steps{ grid-template-columns:1fr; }
+  }
+
+  /* comfortable tap targets on touch devices */
+  @media (hover: none) and (pointer: coarse){
+    .nav-links a, .btn{ min-height:44px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+    .social-row a{ width:42px; height:42px; }
+  }
+</style>
+<!-- Firebase (Firestore + Auth) so Gallery photos and the Owner Panel login work for every visitor, not just the browser that made the change -->
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.13.0/firebase-auth-compat.js"></script>
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyBGYmaQliIJHjgJah_KvAgQApV2L5LeChE",
+    authDomain: "khalid-auto-web.firebaseapp.com",
+    projectId: "khalid-auto-web",
+    storageBucket: "khalid-auto-web.firebasestorage.app",
+    messagingSenderId: "369540451584",
+    appId: "1:369540451584:web:a04754119459529534f7e5",
+    measurementId: "G-N7S409LGBW"
+  };
+  firebase.initializeApp(firebaseConfig);
+  const kaDb = firebase.firestore();
+  const kaAuth = firebase.auth();
+</script>
+</head>
+<body>
+
+<a class="call-banner" href="tel:+251912941327">
+  <svg class="call-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.9 21 3 13.1 3 3c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="currentColor"/>
+  </svg>
+  <strong>CALL NOW: +251 912 941 327</strong>
+</a>
+
+<header id="siteHeader">
+  <nav>
+    <div class="logo-wrap" style="display:flex; align-items:center; gap:12px;">
+      <img src="images/image01.png" alt="Khalid Garage Logo" style="width:48px;height:48px;border-radius:8px;flex-shrink:0;">
+      <div class="logo"><div class="logo-top">KHALID<span>·</span>AUTOMOTIVE</div><div class="logo-am">ካሊድ አውቶሞቲቭ ጋራጅ</div></div>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#process">Process</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="btn btn-primary">Book Service<span class="btn-am">ቀጠሮ ለማስያዝ</span></a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="ev-tags">
+        <span class="ev-tag"><b>EV</b><span class="ev-desc">Electric Vehicle</span></span>
+        <span class="ev-tag"><b>HV</b><span class="ev-desc">Hybrid Vehicle</span></span>
+        <span class="ev-tag"><b>ICE</b><span class="ev-desc">Internal Combustion Engine</span></span>
+      </div>
+      <h1>Reliable, fast, and <em>quality</em> auto repair service.</h1>
+      <p class="sub">Full-service engine, electrical, AC, body, transmission and brake work — done right the first time, by technicians who explain every repair before they touch your car.</p>
+      <p class="sub-am">አስተማማኝ፣ ፈጣን እና ጥራት ያለው የመኪና ጥገና አገልግሎት</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">Book a Service<span class="btn-am">ቀጠሮ ለማስያዝ</span></a>
+        <a href="#services" class="btn btn-ghost">See What We Do</a>
+      </div>
+
+      <div class="dial-row">
+        <div class="dial">
+          <svg viewBox="0 0 104 104">
+            <circle class="dial-track" cx="52" cy="52" r="48"/>
+            <circle class="dial-fill" data-dial data-value="0.78" cx="52" cy="52" r="48"/>
+            <text x="52" y="58" text-anchor="middle" class="dial-num">10+</text>
+          </svg>
+          <div class="dial-label">Years Experience</div>
+        </div>
+        <div class="dial">
+          <svg viewBox="0 0 104 104">
+            <circle class="dial-track" cx="52" cy="52" r="48"/>
+            <circle class="dial-fill" data-dial data-value="0.6" cx="52" cy="52" r="48"/>
+            <text x="52" y="58" text-anchor="middle" class="dial-num">12+</text>
+          </svg>
+          <div class="dial-label">Expert Techs</div>
+        </div>
+        <div class="dial">
+          <svg viewBox="0 0 104 104">
+            <circle class="dial-track" cx="52" cy="52" r="48"/>
+            <circle class="dial-fill" data-dial data-value="1" cx="52" cy="52" r="48"/>
+            <text x="52" y="58" text-anchor="middle" class="dial-num">100%</text>
+          </svg>
+          <div class="dial-label">Satisfaction</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="plate">
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.4" style="color:#8B96A5">
+          <circle cx="100" cy="100" r="46"/>
+          <circle cx="100" cy="100" r="10" fill="var(--amber)" stroke="none"/>
+          <g stroke="var(--amber)">
+            <path d="M100 30v24"/><path d="M100 146v24"/>
+            <path d="M30 100h24"/><path d="M146 100h24"/>
+            <path d="M52 52l17 17"/><path d="M131 131l17 17"/>
+            <path d="M148 52l-17 17"/><path d="M69 131l-17 17"/>
+          </g>
+        </svg>
+      </div>
+      <div class="plate-tag">
+        <span>ADDIS ABABA · ET</span>
+        <span>EST. 10+ YRS</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="road on-dark" style="background:var(--graphite)">
+  <svg viewBox="0 0 400 34" preserveAspectRatio="none"><line class="line" x1="0" y1="17" x2="400" y2="17" stroke="#3A434F" stroke-width="2" stroke-dasharray="18 14"/></svg>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="on-light">
+  <div class="wrap about-grid">
+    <div class="reveal about-copy">
+      <div class="eyebrow">About Us</div>
+      <h2 style="font-size:38px; margin-bottom:22px;">The garage your car can trust.</h2>
+      <p>Khalid Automotive is more than a garage — we're a team dedicated to keeping your vehicle safe, reliable, and performing at its best.</p>
+      <p>From routine maintenance and diagnostics to complex engine, electrical, AC, and mechanical repairs, we approach every vehicle with precision, honest advice, and attention to detail.</p>
+      <p style="color:var(--paper); font-family:var(--font-display); text-transform:uppercase; letter-spacing:.03em; font-size:16px; font-weight:600; margin-top:26px; margin-bottom:0;">Why drivers choose Khalid Automotive</p>
+      <ul class="about-list">
+        <li>
+          <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#0B132B" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
+          <div class="item-body"><span class="item-title">Professional Diagnosis</span><span class="item-desc">We identify the real problem before recommending a repair.</span></div>
+        </li>
+        <li>
+          <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#0B132B" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
+          <div class="item-body"><span class="item-title">Quality Parts &amp; Workmanship</span><span class="item-desc">The right parts, installed with the right expertise.</span></div>
+        </li>
+        <li>
+          <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#0B132B" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
+          <div class="item-body"><span class="item-title">Clear &amp; Honest Pricing</span><span class="item-desc">Know what your vehicle needs before work begins.</span></div>
+        </li>
+        <li>
+          <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#0B132B" stroke-width="3"><path d="M4 12l5 5L20 6"/></svg></span>
+          <div class="item-body"><span class="item-title">Complete Automotive Care</span><span class="item-desc">One trusted place for maintenance, repair, and diagnostics.</span></div>
+        </li>
+      </ul>
+    </div>
+    <div class="reveal about-panel">
+      <div class="quote-mark">"</div>
+      <p>Your car deserves more than a quick fix. It deserves the right care.</p>
+      <div class="sig">— Khalid Automotive, Addis Ababa</div>
+    </div>
+  </div>
+</section>
+
+<div class="road on-light">
+  <svg viewBox="0 0 400 34" preserveAspectRatio="none"><line class="line" x1="0" y1="17" x2="400" y2="17" stroke="#3A4568" stroke-width="2" stroke-dasharray="18 14"/></svg>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="on-dark">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">What We Do</div>
+      <h2>Our Services</h2>
+      <p class="muted">Eight areas of expertise, one shop. Everything your car needs, under one roof.</p>
+    </div>
+  </div>
+  <div class="wrap" style="padding:0 28px 0 28px; max-width:1180px;">
+    <div class="svc-grid reveal">
+
+      <div class="svc-card">
+        <div class="icon"><img class="icon-img" src="images/image05.jpg" alt="General Service"></div>
+        <h3 id="svc-fluid">General Service</h3>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><img class="icon-img" src="images/image03.jpg" alt="Electrical System Repair"></div>
+        <h3 id="svc-electrical">Electrical System</h3>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><img class="icon-img" src="images/image02.jpg" alt="Engine Overhaul" style="width:100%;height:100%;object-fit:cover;border-radius:18px;background:#1a1a1a;"></div>
+        <h3 id="svc-engine">Engine Overhaul</h3>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><img class="icon-img" src="images/image04.jpg" alt="AC Parts Maintenance"></div>
+        <h3 id="svc-ac">AC Parts Maintenance</h3>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><img class="icon-img" src="images/image06.jpg" alt="Body Repair and Painting"></div>
+        <h3 id="svc-body">Body Repair &amp; Painting</h3>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><img class="icon-img" src="images/image07.jpg" alt="Transmission Gear Cutaway"></div>
+        <h3 id="svc-transmission">Transmission</h3>
+      </div>
+
+      <div class="svc-card">
+        <div class="icon"><img class="icon-img" src="images/image11.png" alt="EV Diagnostic &amp; Repairs" style="width:100%;height:100%;object-fit:cover;border-radius:18px;background:#000;"></div>
+        <h3 id="svc-wheel">EV Diagnostic &amp; Repairs</h3>
+      </div>
+
+      <!-- COMPUTER DIAGNOSTICS WITH EV DIAGNOSTIC SCANNER PHOTO ICON -->
+      <div class="svc-card">
+        <div class="icon">
+          <img class="icon-img" src="images/image09.jpg" alt="EV Computer Diagnostic Scanner" style="width:100%;height:100%;object-fit:cover;border-radius:18px;">
+        </div>
+        <h3 id="svc-diagnosis">General Vehicle Inspection</h3>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="on-dark">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Our Work</div>
+      <h2>Photo Gallery</h2>
+      <p class="muted">A look inside the shop and the work we do. Click any photo to view it larger.</p>
+    </div>
+    <div class="gallery-slider reveal">
+      <div class="gallery-track" id="galleryGrid"></div>
+      <div class="gallery-arrows">
+        <button class="g-arrow" id="gPrev" aria-label="Scroll left"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="g-arrow" id="gNext" aria-label="Scroll right"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="lightbox" class="lightbox">
+  <button class="lb-close" id="lbClose" aria-label="Close">&times;</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">&#10094;</button>
+  <img id="lbImg" src="" alt="Gallery photo">
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next">&#10095;</button>
+</div>
+
+<!-- PROCESS -->
+<section id="process" class="on-light">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">How It Works</div>
+      <h2>Our Process</h2>
+      <p class="muted">From the first call to picking up your keys — six clear steps, every time.</p>
+    </div>
+    <div class="process-track reveal">
+      <div class="process-line"></div>
+      <div class="process-steps">
+        <div class="p-step"><div class="n">01</div><h3>Book your slot</h3><p>Call or message us to reserve a time that works for you.</p></div>
+        <div class="p-step"><div class="n">02</div><h3>Drop off or walk in</h3><p>Bring your car in for a quick walk-around check.</p></div>
+        <div class="p-step"><div class="n">03</div><h3>We diagnose</h3><p>Our technicians find the real issue, not just the symptom.</p></div>
+        <div class="p-step"><div class="n">04</div><h3>You approve the quote</h3><p>We explain the cost upfront — nothing starts without your OK.</p></div>
+        <div class="p-step"><div class="n">05</div><h3>We do the work</h3><p>Certified technicians carry out the approved repairs.</p></div>
+        <div class="p-step"><div class="n">06</div><h3>Pick up your car</h3><p>Drive away with your repair backed by a warranty.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="road on-dark" style="background:var(--graphite)">
+  <svg viewBox="0 0 400 34" preserveAspectRatio="none"><line class="line" x1="0" y1="17" x2="400" y2="17" stroke="#3A434F" stroke-width="2" stroke-dasharray="18 14"/></svg>
+</div>
+
+<!-- REVIEWS -->
+<section id="reviews" class="on-dark">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Testimonials</div>
+      <h2>What Our Customers Say</h2>
+    </div>
+    <div class="rev-grid reveal" id="revGrid"></div>
+
+    <div class="rev-submit reveal" id="revSubmitPanel">
+      <h3>Leave a Review</h3>
+      <p class="muted">Tell other customers about your experience with us.</p>
+      <div class="rev-star-input" id="revStarInput">
+        <svg data-v="1" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        <svg data-v="2" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        <svg data-v="3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        <svg data-v="4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        <svg data-v="5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.77 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+      </div>
+      <div class="field" style="margin-bottom:16px;"><label>Your Name</label><input id="revName" type="text" placeholder=""></div>
+      <div class="field" style="margin-bottom:16px;">
+        <label>Your Review</label>
+        <textarea id="revText" placeholder="Share how your service went..."></textarea>
+      </div>
+      <button class="btn btn-primary" id="revSubmitBtn" style="border:none;">Submit Review</button>
+      <div class="form-note" id="revFormNote">Thank you! Your review has been posted.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="on-light">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <div class="eyebrow">Get In Touch</div>
+      <h2 style="font-size:34px; margin-bottom:34px;">Contact &amp; Hours</h2>
+
+      <div class="c-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><h4>Address</h4><p id="cAddress">Cross the bridge from Ayat 7, towards Ayat 49 condominium — you'll find us there.</p></div>
+      </div>
+      <div class="c-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM19 14h2v2h-2zM14 19h2v2h-2zM19 19h2v2h-2z"/></svg></div>
+        <div>
+          <h4>Scan for Directions</h4>
+          <div id="mapsQR" style="margin-top:8px; background:#fff; padding:8px; border-radius:8px; display:inline-block;">
+            <img src="images/image10.png" alt="Scan to get directions to Khalid Garage" style="width:140px;height:140px;display:block;border-radius:6px;">
+          </div>
+        </div>
+      </div>
+      <div class="c-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.7a2 2 0 01-.4 2.1L8 9.9a16 16 0 006 6l1.4-1.4a2 2 0 012.1-.4c.9.3 1.8.5 2.7.6a2 2 0 011.8 2.2z"/></svg></div>
+        <div><h4>Phone</h4><p id="cPhone">+251 912 941 327</p></div>
+      </div>
+      <div class="c-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <div><h4>Working Hours</h4><p id="cHours">Monday – Saturday, 8:00 AM – 7:00 PM</p></div>
+      </div>
+      <div class="c-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></div>
+        <div><h4>Follow Us</h4>
+          <div class="social-row">
+            <a href="#" id="cTiktok" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 3v10.5a3.5 3.5 0 11-3.5-3.5"/><path d="M16 3a5 5 0 005 5"/></svg></a>
+            <a href="#" id="cInstagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+            <a href="#" id="cYoutube" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="map-embed">
+        <iframe id="cMapFrame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.580559735858!2d38.87273429999999!3d9.010686099999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x164b9b625194bb7b%3A0x10c154cc4af5da3e!2zS2hhbGlkIEF1dG9tb3RpdmUgUmVwYWlyICjhjIvhiKvhi6Up!5e0!3m2!1sen!2set!4v1786267646940!5m2!1sen!2set" width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+    </div>
+
+    <div class="reveal form-panel">
+      <h3>Book a Service</h3>
+      <p class="muted">Send us your details and we'll confirm your slot by phone.</p>
+      <form id="bookForm">
+        <div class="f-row">
+          <div class="field"><label for="fname">Full Name</label><input id="fname" required placeholder="Your name"></div>
+          <div class="field"><label for="fphone">Phone</label><input id="fphone" required placeholder="+251 9xx xxx xxx"></div>
+        </div>
+        <div class="field" style="margin-bottom:16px;">
+          <label for="fservice">Service Needed</label>
+          <select id="fservice">
+            <option>General Service</option>
+            <option>Electrical System</option>
+            <option>Engine Overhaul</option>
+            <option>AC Parts Maintenance</option>
+            <option>Body Repair &amp; Painting</option>
+            <option>Transmission</option>
+            <option>EV Diagnostic &amp; Repairs</option>
+            <option>General Vehicle Inspection</option>
+            <option>Not sure — general check-up</option>
+          </select>
+        </div>
+        <div class="field" style="margin-bottom:16px;">
+          <label for="fmsg">Message</label>
+          <textarea id="fmsg" placeholder="Tell us what's going on with your car"></textarea>
+        </div>
+        <div class="send-choice">
+          <button type="submit" data-via="whatsapp" class="btn btn-primary btn-whatsapp">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;vertical-align:-4px;margin-right:6px;">
+              <circle cx="16" cy="16" r="14" fill="#fff"/>
+              <path d="M16.02 3C9.4 3 4 8.38 4 15c0 2.35.68 4.53 1.86 6.38L4 29l7.82-1.83A11.9 11.9 0 0 0 16.02 27C22.63 27 28 21.62 28 15S22.63 3 16.02 3z" fill="none" stroke="#25D366" stroke-width="1.6"/>
+              <path d="M22.1 18.2c-.33-.17-1.94-.96-2.24-1.07-.3-.11-.52-.17-.74.17-.22.33-.85 1.07-1.04 1.29-.19.22-.38.25-.71.08-.33-.17-1.4-.52-2.66-1.65-.98-.87-1.65-1.95-1.84-2.28-.19-.33-.02-.51.15-.68.15-.15.33-.38.5-.58.17-.19.22-.33.33-.55.11-.22.06-.41-.03-.58-.08-.17-.74-1.79-1.01-2.45-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.58.08-.88.41-.3.33-1.15 1.12-1.15 2.74s1.18 3.18 1.34 3.4c.17.22 2.32 3.55 5.63 4.98.79.34 1.4.55 1.88.7.79.25 1.51.21 2.08.13.63-.09 1.94-.79 2.22-1.56.27-.77.27-1.43.19-1.56-.08-.14-.3-.22-.63-.39z" fill="#25D366"/>
+            </svg>Send via WhatsApp
+          </button>
+          <button type="submit" data-via="telegram" class="btn btn-ghost">
+            <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;vertical-align:-4px;margin-right:6px;">
+              <circle cx="120" cy="120" r="120" fill="#29A9EA"/>
+              <path d="M179 72l-24.5 116c-1.8 8.2-6.7 10.2-13.6 6.4l-37.6-27.7-18.2 17.5c-2 2-3.7 3.7-7.6 3.7l2.7-38.6L155 89.4c3.4-3-0.7-4.7-5.3-1.7l-88 55.4-37.9-11.8c-8.2-2.6-8.4-8.2 1.8-12.1L167.6 61c6.9-2.6 12.9 1.6 11.4 11z" fill="#fff"/>
+            </svg>Send via Telegram
+          </button>
+        </div>
+        <div class="form-note" id="formNote">// Opening chat — send the message to confirm your booking.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<a id="waFloat" href="https://wa.me/251912941327?text=Hi%20Khalid%20Automotive%2C%20I%27d%20like%20to%20ask%20about%20a%20service." target="_blank" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="16" cy="16" r="14" fill="#fff"/>
+    <path d="M16.02 3C9.4 3 4 8.38 4 15c0 2.35.68 4.53 1.86 6.38L4 29l7.82-1.83A11.9 11.9 0 0 0 16.02 27C22.63 27 28 21.62 28 15S22.63 3 16.02 3z" fill="none" stroke="#25D366" stroke-width="1.6"/>
+    <path d="M22.1 18.2c-.33-.17-1.94-.96-2.24-1.07-.3-.11-.52-.17-.74.17-.22.33-.85 1.07-1.04 1.29-.19.22-.38.25-.71.08-.33-.17-1.4-.52-2.66-1.65-.98-.87-1.65-1.95-1.84-2.28-.19-.33-.02-.51.15-.68.15-.15.33-.38.5-.58.17-.19.22-.33.33-.55.11-.22.06-.41-.03-.58-.08-.17-.74-1.79-1.01-2.45-.27-.64-.54-.55-.74-.56h-.63c-.22 0-.58.08-.88.41-.3.33-1.15 1.12-1.15 2.74s1.18 3.18 1.34 3.4c.17.22 2.32 3.55 5.63 4.98.79.34 1.4.55 1.88.7.79.25 1.51.21 2.08.13.63-.09 1.94-.79 2.22-1.56.27-.77.27-1.43.19-1.56-.08-.14-.3-.22-.63-.39z" fill="#25D366"/>
+  </svg>
+</a>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="logo foot-logo"><div class="logo-top">KHALID<span>·</span>AUTOMOTIVE</div><div class="logo-am foot-logo-am">ካሊድ አውቶሞቲቭ ጋራጅ</div></div>
+      <div class="foot-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#process">Process</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Khalid Automotive. All rights reserved.</span>
+      <span>Addis Ababa, Ethiopia</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const KHALID_CONTENT_KEY = 'khalid_content_v1';
+  let siteContent = null;
+  try {
+    const raw = localStorage.getItem(KHALID_CONTENT_KEY);
+    if (raw) siteContent = JSON.parse(raw);
+  } catch (e) { /* ignore corrupt data */ }
+
+  if (siteContent && siteContent.services) {
+    Object.keys(siteContent.services).forEach(key => {
+      const el = document.getElementById('svc-' + key);
+      if (el) el.textContent = siteContent.services[key];
+    });
+  }
+  if (siteContent && siteContent.contact) {
+    const c = siteContent.contact;
+    if (c.address) document.getElementById('cAddress').textContent = c.address;
+    if (c.phone) document.getElementById('cPhone').textContent = c.phone;
+    if (c.hours) document.getElementById('cHours').textContent = c.hours;
+    if (c.tiktok) document.getElementById('cTiktok').href = c.tiktok;
+    if (c.instagram) document.getElementById('cInstagram').href = c.instagram;
+    if (c.youtube) document.getElementById('cYoutube').href = c.youtube;
+  }
+
+  // header scroll state
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  // mobile nav
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', (e) => { e.stopPropagation(); navLinks.classList.toggle('open'); });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+  document.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('open') && !navLinks.contains(e.target) && e.target !== burger && !burger.contains(e.target)) {
+      navLinks.classList.remove('open');
+    }
+  });
+
+  // reveal on scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  // gauge dials
+  const dials = document.querySelectorAll('[data-dial]');
+  const circumference = 2 * Math.PI * 48;
+  const dialIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const val = parseFloat(e.target.dataset.value);
+        e.target.style.strokeDashoffset = circumference - val * circumference;
+        dialIO.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  dials.forEach(d => { d.style.strokeDasharray = circumference; dialIO.observe(d); });
+
+  // process active step highlight on scroll
+  const steps = document.querySelectorAll('.p-step');
+  const stepIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('active'); });
+  }, { threshold: 0.6 });
+  steps.forEach(s => stepIO.observe(s));
+
+  const galleryGrid = document.getElementById('galleryGrid');
+  const placeholderSVG = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M21 16l-5-5-4 4-3-3-4 4"/></svg>`;
+
+  // Slider arrow controls (defined before the first render so updateArrows() is safe to call)
+  const gPrev = document.getElementById('gPrev');
+  const gNext = document.getElementById('gNext');
+  function scrollByCard(delta) {
+    const card = galleryGrid.querySelector('.g-item');
+    const step = card ? card.getBoundingClientRect().width + 14 : 300;
+    galleryGrid.scrollBy({ left: delta * step, behavior: 'smooth' });
+  }
+  function updateArrows() {
+    const max = galleryGrid.scrollWidth - galleryGrid.clientWidth - 2;
+    gPrev.disabled = galleryGrid.scrollLeft <= 0;
+    gNext.disabled = galleryGrid.scrollLeft >= max;
+  }
+  gPrev.addEventListener('click', () => scrollByCard(-1));
+  gNext.addEventListener('click', () => scrollByCard(1));
+  galleryGrid.addEventListener('scroll', updateArrows);
+  window.addEventListener('resize', updateArrows);
+
+  let galleryPhotos = (siteContent && siteContent.gallery && siteContent.gallery.length) ? siteContent.gallery : [
+    "gallery/photo-1.jpg",
+    "gallery/photo-2.jpg",
+    "gallery/photo-3.jpg",
+    "gallery/photo-4.jpg",
+    "gallery/photo-5.jpg",
+    "gallery/photo-6.jpg"
+  ];
+
+  // Builds (or rebuilds) the visible gallery grid from an array of photo URLs/paths.
+  // Called on first load with cached/default photos, and again once the shared
+  // Firestore copy arrives so every visitor sees the same gallery.
+  function renderGalleryGrid(photos) {
+    galleryPhotos = photos;
+    galleryGrid.innerHTML = '';
+    photos.forEach((src, i) => {
+      const fig = document.createElement('div');
+      fig.className = 'g-item reveal';
+      fig.innerHTML = `
+        <img src="${src}" alt="Khalid Automotive photo ${i + 1}" loading="lazy"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="ph" style="display:none;">${placeholderSVG}<span>Photo ${i + 1}</span></div>
+        <div class="zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3M11 8v6M8 11h6"/></svg></div>
+      `;
+      fig.addEventListener('click', () => openLightbox(i));
+      galleryGrid.appendChild(fig);
+      io.observe(fig);
+    });
+    updateArrows();
+  }
+  renderGalleryGrid(galleryPhotos);
+
+  // Fetch the shared gallery from Firestore (public read) so every visitor — not just
+  // the browser that added a photo in the Owner Panel — sees the same photos.
+  kaDb.collection('content').doc('gallery').get().then(doc => {
+    if (doc.exists && Array.isArray(doc.data().photos) && doc.data().photos.length) {
+      renderGalleryGrid(doc.data().photos);
+    }
+  }).catch(err => console.warn('Gallery Firestore fetch failed:', err));
+
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lbImg');
+  let lbIndex = 0;
+
+  function openLightbox(i) {
+    const img = galleryGrid.children[i].querySelector('img');
+    if (img.style.display === 'none') return;
+    lbIndex = i;
+    lbImg.src = img.src;
+    lightbox.classList.add('open');
+  }
+  function closeLightbox(){ lightbox.classList.remove('open'); }
+  function showDelta(delta) {
+    const total = galleryPhotos.length;
+    let i = lbIndex;
+    for (let n = 0; n < total; n++) {
+      i = (i + delta + total) % total;
+      const img = galleryGrid.children[i].querySelector('img');
+      if (img.style.display !== 'none') { openLightbox(i); return; }
+    }
+  }
+  document.getElementById('lbClose').addEventListener('click', closeLightbox);
+  document.getElementById('lbPrev').addEventListener('click', () => showDelta(-1));
+  document.getElementById('lbNext').addEventListener('click', () => showDelta(1));
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') showDelta(-1);
+    if (e.key === 'ArrowRight') showDelta(1);
+  });
+
+  let reviewsData = [];
+  const revGrid = document.getElementById('revGrid');
+
+  function addReviewCard(r, prepend) {
+    const card = document.createElement('div');
+    card.className = 'rev-card';
+    card.innerHTML = `<div class="stars">${'★'.repeat(r.stars || 5)}${'☆'.repeat(5 - (r.stars || 5))}</div>
+      <p>"${r.text}"</p>
+      <div class="rev-who">${r.who}</div>`;
+    if (prepend && revGrid.firstChild) revGrid.insertBefore(card, revGrid.firstChild);
+    else revGrid.appendChild(card);
+  }
+
+  // Loads every visitor's review from Firestore (public read) so everyone sees the
+  // same testimonials, not just the browser that wrote them.
+  kaDb.collection('reviews').orderBy('createdAt', 'desc').get().then(snap => {
+    revGrid.innerHTML = '';
+    snap.forEach(doc => addReviewCard(doc.data(), false));
+  }).catch(err => console.warn('Reviews Firestore fetch failed:', err));
+
+  let selectedStars = 0;
+  const starIcons = Array.from(document.querySelectorAll('#revStarInput svg'));
+  function paintStars(n) {
+    starIcons.forEach(s => s.classList.toggle('on', +s.dataset.v <= n));
+  }
+  starIcons.forEach(s => {
+    s.addEventListener('mouseenter', () => paintStars(+s.dataset.v));
+    s.addEventListener('mouseleave', () => paintStars(selectedStars));
+    s.addEventListener('click', () => { selectedStars = +s.dataset.v; paintStars(selectedStars); });
+  });
+
+  document.getElementById('revSubmitBtn').addEventListener('click', () => {
+    const nameEl = document.getElementById('revName');
+    const textEl = document.getElementById('revText');
+    const noteEl = document.getElementById('revFormNote');
+    const submitBtn = document.getElementById('revSubmitBtn');
+    const name = nameEl.value.trim();
+    const text = textEl.value.trim();
+    if (!selectedStars) { alert('Please select a star rating.'); return; }
+    if (!text) { alert('Please write a short review.'); return; }
+    const who = name ? `${name}` : 'Anonymous customer';
+    const review = { stars: selectedStars, text, who, createdAt: firebase.firestore.FieldValue.serverTimestamp() };
+
+    submitBtn.disabled = true; submitBtn.textContent = 'Submitting…';
+    // Saved to Firestore (not localStorage) so every visitor sees this review, not
+    // just this browser. Firestore rules allow anyone to add a review but only the
+    // signed-in owner to edit or delete one.
+    kaDb.collection('reviews').add(review)
+      .then(() => {
+        addReviewCard(review, true);
+        nameEl.value = ''; textEl.value = ''; selectedStars = 0; paintStars(0);
+        noteEl.classList.add('show');
+      })
+      .catch(err => alert('Could not post your review right now: ' + err.message))
+      .finally(() => { submitBtn.disabled = false; submitBtn.textContent = 'Submit Review'; });
+    setTimeout(() => noteEl.classList.remove('show'), 5000);
+  });
+
+  const form = document.getElementById('bookForm');
+  const note = document.getElementById('formNote');
+  const WHATSAPP_NUMBER = '251912941327'; // no +, no spaces
+  const TELEGRAM_PHONE = '251912941327'; // <-- Telegram phone number, no +, no spaces (must be registered on Telegram, contact-by-phone privacy allowed)
+  let sendVia = 'whatsapp';
+
+  form.querySelectorAll('button[data-via]').forEach(btn => {
+    btn.addEventListener('click', () => { sendVia = btn.dataset.via; });
+  });
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    const service = document.getElementById('fservice').value;
+    const msg = document.getElementById('fmsg').value.trim();
+
+    const lines = [
+      '🔧 New Service Booking — Khalid Automotive',
+      `👤 Name: ${name}`,
+      `📞 Phone: ${phone}`,
+      `🛠️ Service: ${service}`,
+      msg ? `📝 Details: ${msg}` : null
+    ].filter(Boolean);
+
+    const text = encodeURIComponent(lines.join('\n'));
+    const url = sendVia === 'telegram'
+      ? `https://t.me/+${TELEGRAM_PHONE}?text=${text}`
+      : `https://wa.me/${WHATSAPP_NUMBER}?text=${text}`;
+
+    note.textContent = sendVia === 'telegram'
+      ? '// Opening Telegram — send the message to confirm your booking.'
+      : '// Opening WhatsApp — send the message to confirm your booking.';
+    note.classList.add('show');
+    form.reset();
+    setTimeout(() => note.classList.remove('show'), 5000);
+
+    window.open(url, '_blank');
+  });
+
+  const SECRET_HASH = '#khalid-owner-panel';
+
+  function buildAdminPanel() {
+    const style = document.createElement('style');
+    style.id = 'kaStyles';
+    style.textContent = `
+      #kaRoot{ position:fixed; inset:0; z-index:99999; font-family:'Segoe UI',Arial,sans-serif;
+        background:radial-gradient(circle at 20% 0%, #111B36, #0B132B 60%); color:#FFFFFF;
+        overflow:auto; display:flex; align-items:center; justify-content:center; padding:24px; }
+      #kaRoot *{ box-sizing:border-box; }
+      #kaRoot a{ color:inherit; }
+      #kaRoot .ka-login-box{ width:100%; max-width:380px; background:linear-gradient(160deg,#111B36,#0B132B);
+        border:1px solid rgba(255,255,255,.15); border-radius:18px; padding:40px 34px; box-shadow:0 30px 60px rgba(0,0,0,.5); }
+      #kaRoot .ka-logo{ text-align:center; font-weight:800; font-size:20px; letter-spacing:.04em; margin-bottom:6px; }
+      #kaRoot .ka-logo span{ color:#39FF88; }
+      #kaRoot .ka-login-sub{ text-align:center; color:rgba(255,255,255,.55); font-size:13px; margin-bottom:28px; }
+      #kaRoot .ka-field{ margin-bottom:16px; }
+      #kaRoot .ka-field label{ display:block; font-size:12px; text-transform:uppercase; letter-spacing:.06em; color:rgba(255,255,255,.6); margin-bottom:6px; }
+      #kaRoot .ka-field input{ width:100%; padding:12px 14px; border-radius:10px; border:1px solid rgba(255,255,255,.15);
+        background:rgba(255,255,255,.04); color:#FFFFFF; font-size:14px; outline:none; }
+      #kaRoot .ka-field input:focus{ border-color:#39FF88; }
+      #kaRoot .ka-btn{ padding:13px; border-radius:10px; border:none; cursor:pointer; font-weight:700; font-size:14px; width:100%; }
+      #kaRoot .ka-btn-amber{ background:#39FF88; color:#0B132B; }
+      #kaRoot .ka-btn-amber:hover{ background:#2BE07A; }
+      #kaRoot .ka-btn-outline{ background:transparent; border:1px solid rgba(255,255,255,.15); color:#FFFFFF; width:auto; }
+      #kaRoot .ka-btn-outline:hover{ border-color:#39FF88; color:#39FF88; }
+      #kaRoot .ka-btn-danger{ background:transparent; border:1px solid rgba(229,72,77,.5); color:#E5484D; width:auto; padding:8px 14px; }
+      #kaRoot .ka-btn-danger:hover{ background:rgba(229,72,77,.12); }
+      #kaRoot .ka-error-msg{ background:rgba(229,72,77,.12); border:1px solid rgba(229,72,77,.4); color:#ff9a9d; font-size:13px; padding:10px 12px; border-radius:8px; margin-bottom:16px; display:none; }
+      #kaRoot .ka-hint{ margin-top:22px; text-align:center; font-size:11.5px; color:rgba(255,255,255,.35); line-height:1.6; }
+      #kaRoot .ka-dash{ display:none; width:100%; max-width:1080px; }
+      #kaRoot .ka-dash-top{ display:flex; justify-content:space-between; align-items:center; padding:18px 26px;
+        background:linear-gradient(160deg,#111B36,#0B132B); border:1px solid rgba(255,255,255,.15); border-radius:14px; margin-bottom:20px; }
+      #kaRoot .ka-who{ font-size:13px; color:rgba(255,255,255,.6); }
+      #kaRoot .ka-who b{ color:#39FF88; }
+      #kaRoot .ka-role-tag{ display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:.05em; padding:2px 8px; border-radius:20px; margin-left:8px; text-transform:uppercase; }
+      #kaRoot .ka-role-tag.super{ background:rgba(57,255,136,.15); color:#39FF88; border:1px solid rgba(57,255,136,.4); }
+      #kaRoot .ka-role-tag.admin{ background:rgba(167,176,192,.18); color:#A7B0C0; border:1px solid rgba(167,176,192,.45); }
+      #kaRoot .ka-tabs{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:20px; }
+      #kaRoot .ka-tab-btn{ padding:10px 18px; border-radius:9px; border:1px solid rgba(255,255,255,.15); background:rgba(255,255,255,.03);
+        color:rgba(255,255,255,.7); font-size:13px; cursor:pointer; font-weight:600; }
+      #kaRoot .ka-tab-btn.active{ background:#39FF88; color:#0B132B; border-color:#39FF88; }
+      #kaRoot .ka-panel{ display:none; background:linear-gradient(160deg,#111B36,#0B132B); border:1px solid rgba(255,255,255,.15); border-radius:14px; padding:28px; }
+      #kaRoot .ka-panel.active{ display:block; }
+      #kaRoot .ka-panel h2{ font-size:18px; margin-bottom:4px; }
+      #kaRoot .ka-panel .ka-sub{ font-size:12.5px; color:rgba(255,255,255,.5); margin-bottom:22px; }
+      #kaRoot .ka-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+      #kaRoot .ka-svc-list .ka-field{ display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+      #kaRoot .ka-svc-list .ka-field label{ width:170px; flex-shrink:0; margin-bottom:0; font-size:12px; }
+      #kaRoot .ka-item-card{ border:1px solid rgba(255,255,255,.15); border-radius:10px; padding:14px 16px; margin-bottom:12px;
+        background:rgba(255,255,255,.02); display:flex; gap:12px; align-items:flex-start; }
+      #kaRoot .ka-item-card .ka-item-fields{ flex:1; display:flex; flex-direction:column; gap:8px; }
+      #kaRoot .ka-item-card input, #kaRoot .ka-item-card textarea, #kaRoot .ka-item-card select{
+        width:100%; padding:9px 11px; border-radius:8px; border:1px solid rgba(255,255,255,.15);
+        background:rgba(255,255,255,.04); color:#FFFFFF; font-size:13px; outline:none; font-family:inherit; }
+      #kaRoot .ka-item-card input[type="file"]{ padding:8px; cursor:pointer; }
+      #kaRoot .ka-g-or{ font-size:11px; color:rgba(255,255,255,.4); text-align:center; margin:2px 0; }
+      #kaRoot .ka-item-card textarea{ resize:vertical; min-height:50px; }
+      #kaRoot .ka-remove-btn{ background:transparent; border:1px solid rgba(229,72,77,.4); color:#E5484D; width:30px; height:30px; border-radius:8px; cursor:pointer; font-size:16px; flex-shrink:0; }
+      #kaRoot .ka-add-btn{ margin-top:4px; padding:10px 16px; border-radius:99px; border:1px dashed rgba(255,255,255,.35);
+        background:transparent; color:rgba(255,255,255,.7); font-size:13px; cursor:pointer; width:100%; }
+      #kaRoot .ka-add-btn:hover{ border-color:#39FF88; color:#39FF88; }
+      #kaRoot .ka-save-bar{ display:flex; justify-content:flex-end; gap:10px; margin-top:24px; }
+      #kaRoot .ka-save-bar .ka-btn{ width:auto; padding:12px 26px; }
+      #kaRoot .ka-saved-msg{ display:none; margin-top:14px; padding:10px 14px; border-radius:8px;
+        background:rgba(90,200,120,.12); border:1px solid rgba(90,200,120,.35); color:#8fe0a8; font-size:13px; }
+      #kaRoot .ka-admin-row{ display:flex; justify-content:space-between; align-items:center; padding:12px 16px;
+        border:1px solid rgba(255,255,255,.15); border-radius:10px; margin-bottom:10px; }
+      #kaRoot .ka-admin-row .ka-name{ font-size:14px; font-weight:600; }
+      #kaRoot .ka-admin-row .ka-meta{ font-size:11.5px; color:rgba(255,255,255,.5); margin-top:2px; }
+      #kaRoot .ka-limit-note{ font-size:12px; color:rgba(255,255,255,.5); margin-top:14px; }
+      @media(max-width:640px){ #kaRoot .ka-row{ grid-template-columns:1fr; } }
+    `;
+    document.head.appendChild(style);
+
+    const root = document.createElement('div');
+    root.id = 'kaRoot';
+    root.innerHTML = `
+      <div class="ka-login-box" id="kaLoginBox">
+        <div class="ka-logo">KHALID <span>· AUTOMOTIVE</span></div>
+        <div class="ka-login-sub">Owner Control Panel</div>
+        <div class="ka-error-msg" id="kaLoginError"></div>
+        <div class="ka-field"><label>Email</label><input id="kaLoginUser" type="email" autocomplete="username"></div>
+        <div class="ka-field"><label>Password</label><input id="kaLoginPass" type="password" autocomplete="current-password"></div>
+        <button class="ka-btn ka-btn-amber" id="kaLoginBtn">Sign In</button>
+        <div class="ka-hint">This panel is never shown to site visitors and is reached only through your private link.</div>
+      </div>
+      <div class="ka-dash" id="kaDash">
+        <div class="ka-dash-top">
+          <div class="ka-who">Signed in as <b id="kaWhoName"></b><span class="ka-role-tag" id="kaWhoRole"></span></div>
+          <button class="ka-btn ka-btn-outline" id="kaLogoutBtn">Log Out</button>
+        </div>
+        <div class="ka-tabs" id="kaTabs">
+          <button class="ka-tab-btn active" data-tab="services">Services</button>
+          <button class="ka-tab-btn" data-tab="gallery">Gallery</button>
+          <button class="ka-tab-btn" data-tab="reviews">Reviews</button>
+          <button class="ka-tab-btn" data-tab="contact">Contact Info</button>
+          <button class="ka-tab-btn" data-tab="admins" id="kaAdminsTabBtn" style="display:none;">Manage Admins</button>
+        </div>
+        <div class="ka-panel active" id="ka-panel-services">
+          <h2>Service Category Titles</h2>
+          <div class="ka-sub">Rename the category titles shown on the Services section.</div>
+          <div class="ka-svc-list">
+            <div class="ka-field"><label>General Service</label><input id="ka-svc-fluid"></div>
+            <div class="ka-field"><label>Electrical System</label><input id="ka-svc-electrical"></div>
+            <div class="ka-field"><label>Engine Overhaul</label><input id="ka-svc-engine"></div>
+            <div class="ka-field"><label>AC Parts Maintenance</label><input id="ka-svc-ac"></div>
+            <div class="ka-field"><label>Body Repair &amp; Painting</label><input id="ka-svc-body"></div>
+            <div class="ka-field"><label>Transmission</label><input id="ka-svc-transmission"></div>
+            <div class="ka-field"><label>EV Diagnostic &amp; Repairs</label><input id="ka-svc-wheel"></div>
+            <div class="ka-field"><label>General Vehicle Inspection</label><input id="ka-svc-diagnosis"></div>
+          </div>
+          <div class="ka-save-bar"><button class="ka-btn ka-btn-amber" id="kaSaveServices">Save Changes</button></div>
+          <div class="ka-saved-msg" id="ka-saved-services">Saved. Refresh the site to see it live.</div>
+        </div>
+        <div class="ka-panel" id="ka-panel-gallery">
+          <h2>Photo Gallery</h2>
+          <div class="ka-sub">One image path or URL per photo. Example: gallery/photo-1.jpg</div>
+          <div id="kaGalleryList"></div>
+          <button class="ka-add-btn" id="kaAddGallery">+ Add Photo</button>
+          <div class="ka-save-bar"><button class="ka-btn ka-btn-amber" id="kaSaveGallery">Save Changes</button></div>
+          <div class="ka-saved-msg" id="ka-saved-gallery">Saved. Refresh the site to see it live.</div>
+        </div>
+        <div class="ka-panel" id="ka-panel-reviews">
+          <h2>Customer Reviews</h2>
+          <div class="ka-sub">Every visitor-submitted review is shown here. Delete any review you don't want public — this removes it everywhere immediately.</div>
+          <div id="kaReviewsList"></div>
+        </div>
+        <div class="ka-panel" id="ka-panel-contact">
+          <h2>Contact &amp; Hours</h2>
+          <div class="ka-sub">Updates the Contact section of the site.</div>
+          <div class="ka-row">
+            <div class="ka-field"><label>Address</label><input id="ka-cAddress"></div>
+            <div class="ka-field"><label>Phone</label><input id="ka-cPhone"></div>
+            <div class="ka-field"><label>Working Hours</label><input id="ka-cHours"></div>
+            <div class="ka-field"><label>TikTok URL</label><input id="ka-cTiktok"></div>
+            <div class="ka-field"><label>Instagram URL</label><input id="ka-cInstagram"></div>
+            <div class="ka-field"><label>YouTube URL</label><input id="ka-cYoutube"></div>
+          </div>
+          <div class="ka-save-bar"><button class="ka-btn ka-btn-amber" id="kaSaveContact">Save Changes</button></div>
+          <div class="ka-saved-msg" id="ka-saved-contact">Saved. Refresh the site to see it live.</div>
+        </div>
+        <div class="ka-panel" id="ka-panel-admins">
+          <h2>Manage Admin Accounts</h2>
+          <div class="ka-sub">Super Admin only. Up to 3 regular Admin accounts allowed.</div>
+          <div id="kaAdminsList"></div>
+          <div class="ka-limit-note" id="kaAdminLimitNote"></div>
+          <div class="ka-row" style="margin-top:18px;">
+            <div class="ka-field"><label>New Admin Username</label><input id="kaNewAdminUser"></div>
+            <div class="ka-field"><label>New Admin Password</label><input id="kaNewAdminPass"></div>
+          </div>
+          <button class="ka-btn ka-btn-outline" id="kaAddAdminBtn">+ Add Admin</button>
+          <div class="ka-saved-msg" id="ka-saved-admins">Saved.</div>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(root);
+    wireAdminPanel(root);
+  }
+
+  function wireAdminPanel(root) {
+    const $ = id => root.querySelector('#' + id);
+    let currentUser = null;
+
+    // Admin accounts now live in Firebase Authentication (Console → Authentication → Users)
+    // instead of a hardcoded username/password in this file. To add more admins, create
+    // more users there — this panel signs in whoever Firebase Auth accepts. The "Manage
+    // Admins" tab below is hidden (Firebase Auth users can't be listed/added from client-side
+    // code without extra setup); these two stubs just keep the unused panel from erroring.
+    const ADMINS_KEY = 'khalid_admins_v1';
+    function loadAdmins(){ return JSON.parse(localStorage.getItem(ADMINS_KEY) || 'null') || []; }
+    function saveAdmins(a){ localStorage.setItem(ADMINS_KEY, JSON.stringify(a)); }
+    function loadContentData(){
+      return JSON.parse(localStorage.getItem(KHALID_CONTENT_KEY) || 'null') || {
+        services: { engine:'Engine Overhaul', electrical:'Electrical System', ac:'AC Parts Maintenance', body:'Body Repair & Painting', transmission:'Transmission', wheel:'EV Diagnostic & Repairs', fluid:'General Service', diagnosis:'General Vehicle Inspection' },
+        gallery: ['gallery/photo-1.jpg','gallery/photo-2.jpg','gallery/photo-3.jpg','gallery/photo-4.jpg','gallery/photo-5.jpg','gallery/photo-6.jpg'],
+        reviews: [],
+        contact: { address:"Cross the bridge from Ayat 7, towards Ayat 49 condominium — you'll find us there.", phone:"+251 912 941 327", hours:"Monday – Saturday, 8:00 AM – 7:00 PM", tiktok:"#", instagram:"#", youtube:"#" }
+      };
+    }
+    function saveContentData(c){ localStorage.setItem(KHALID_CONTENT_KEY, JSON.stringify(c)); }
+
+    $('kaLoginBtn').addEventListener('click', doLogin);
+    $('kaLoginPass').addEventListener('keydown', e => { if (e.key === 'Enter') doLogin(); });
+
+    function doLogin(){
+      const u = $('kaLoginUser').value.trim();
+      const p = $('kaLoginPass').value;
+      const err = $('kaLoginError');
+      err.style.display = 'none';
+      kaAuth.signInWithEmailAndPassword(u, p).catch(() => {
+        err.textContent = 'Incorrect email or password.';
+        err.style.display = 'block';
+      });
+      // enterDashboard() runs automatically via onAuthStateChanged below once sign-in succeeds
+    }
+
+    function enterDashboard(){
+      $('kaLoginBox').style.display = 'none';
+      $('kaDash').style.display = 'block';
+      $('kaWhoName').textContent = currentUser.email;
+      const tag = $('kaWhoRole');
+      tag.textContent = 'Admin';
+      tag.className = 'ka-role-tag admin';
+      $('kaAdminsTabBtn').style.display = 'none'; // manage additional admins via Firebase Console instead
+      populateForms();
+    }
+
+    $('kaLogoutBtn').addEventListener('click', () => {
+      kaAuth.signOut();
+    });
+
+    kaAuth.onAuthStateChanged(user => {
+      if (user) {
+        currentUser = user;
+        enterDashboard();
+      } else {
+        currentUser = null;
+        $('kaDash').style.display = 'none';
+        $('kaLoginBox').style.display = 'block';
+        $('kaLoginUser').value = ''; $('kaLoginPass').value = '';
+      }
+    });
+
+    root.querySelectorAll('.ka-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        root.querySelectorAll('.ka-tab-btn').forEach(b => b.classList.remove('active'));
+        root.querySelectorAll('.ka-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        $('ka-panel-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    function populateForms(){
+      const c = loadContentData();
+      Object.keys(c.services).forEach(k => { const el = $('ka-svc-' + k); if (el) el.value = c.services[k]; });
+      $('ka-cAddress').value = c.contact.address;
+      $('ka-cPhone').value = c.contact.phone;
+      $('ka-cHours').value = c.contact.hours;
+      $('ka-cTiktok').value = c.contact.tiktok;
+      $('ka-cInstagram').value = c.contact.instagram;
+      $('ka-cYoutube').value = c.contact.youtube;
+      $('kaGalleryList').innerHTML = '<div class="ka-sub">Loading current photos from the shared gallery…</div>';
+      kaDb.collection('content').doc('gallery').get().then(doc => {
+        const photos = (doc.exists && Array.isArray(doc.data().photos)) ? doc.data().photos : c.gallery;
+        renderGalleryFields(photos);
+      }).catch(() => renderGalleryFields(c.gallery));
+      loadAndRenderReviewsAdmin();
+      renderAdminsList();
+    }
+    function flashSaved(id){ const el = $(id); el.style.display = 'block'; setTimeout(() => el.style.display = 'none', 2500); }
+
+    $('kaSaveServices').addEventListener('click', () => {
+      const c = loadContentData();
+      ['engine','electrical','ac','body','transmission','wheel','fluid','diagnosis'].forEach(k => {
+        c.services[k] = $('ka-svc-' + k).value.trim() || c.services[k];
+      });
+      saveContentData(c); flashSaved('ka-saved-services');
+    });
+
+    // Resizes/compresses an uploaded photo before it's stored in Firestore, since a
+    // Firestore document has a 1MB total size limit shared across all photos in the
+    // gallery. Full-resolution phone photos would blow past that almost immediately.
+    function compressImageFile(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = e => {
+          const img = new Image();
+          img.onload = () => {
+            const maxW = 1000;
+            const scale = Math.min(1, maxW / img.width);
+            const canvas = document.createElement('canvas');
+            canvas.width = img.width * scale;
+            canvas.height = img.height * scale;
+            canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+            resolve(canvas.toDataURL('image/jpeg', 0.65));
+          };
+          img.onerror = reject;
+          img.src = e.target.result;
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+    function renderGalleryFields(list){ $('kaGalleryList').innerHTML = ''; list.forEach(src => addGalleryField(src)); }
+    function addGalleryField(value){
+      const card = document.createElement('div');
+      card.className = 'ka-item-card';
+      const isData = value && value.startsWith('data:');
+      card.innerHTML = `<div class="ka-item-fields">
+          <div class="ka-g-preview-wrap">
+            <img class="ka-g-preview" src="${value || ''}" style="${value ? '' : 'display:none;'} width:100%; max-height:140px; object-fit:cover; border-radius:8px; margin-bottom:8px;">
+          </div>
+          <input type="file" accept="image/*" class="ka-g-file">
+          <div class="ka-g-or">— or paste an image URL / path below —</div>
+          <input class="ka-g-input" placeholder="gallery/photo.jpg or https://..." value="${(!isData && value) ? value.replace(/"/g,'&quot;') : ''}">
+        </div>
+        <button class="ka-remove-btn">&times;</button>`;
+      const fileInput = card.querySelector('.ka-g-file');
+      const urlInput = card.querySelector('.ka-g-input');
+      const preview = card.querySelector('.ka-g-preview');
+      card.dataset.dataUrl = isData ? value : '';
+      fileInput.addEventListener('change', () => {
+        const file = fileInput.files[0];
+        if (!file) return;
+        compressImageFile(file).then(dataUrl => {
+          card.dataset.dataUrl = dataUrl;
+          urlInput.value = '';
+          preview.src = dataUrl;
+          preview.style.display = 'block';
+        });
+      });
+      urlInput.addEventListener('input', () => {
+        if (urlInput.value.trim()) {
+          card.dataset.dataUrl = '';
+          preview.src = urlInput.value.trim();
+          preview.style.display = 'block';
+        }
+      });
+      card.querySelector('.ka-remove-btn').addEventListener('click', () => card.remove());
+      $('kaGalleryList').appendChild(card);
+    }
+    $('kaAddGallery').addEventListener('click', () => addGalleryField(''));
+    $('kaSaveGallery').addEventListener('click', () => {
+      const saveBtn = $('kaSaveGallery');
+      const cards = Array.from(root.querySelectorAll('#kaGalleryList .ka-item-card'));
+      const vals = cards.map(card => {
+        const dataUrl = card.dataset.dataUrl;
+        if (dataUrl) return dataUrl;
+        const input = card.querySelector('.ka-g-input');
+        return input.value.trim();
+      }).filter(Boolean);
+      saveBtn.disabled = true; saveBtn.textContent = 'Saving…';
+      // Saved to Firestore (not localStorage) so every visitor sees the same gallery,
+      // not just this browser. Requires being signed in — Firestore rules reject
+      // anonymous writes.
+      kaDb.collection('content').doc('gallery').set({ photos: vals })
+        .then(() => {
+          renderGalleryGrid(vals); // reflect the change on this page immediately too
+          flashSaved('ka-saved-gallery');
+        })
+        .catch(err => {
+          alert('Could not save to the shared gallery: ' + err.message);
+        })
+        .finally(() => { saveBtn.disabled = false; saveBtn.textContent = 'Save Changes'; });
+    });
+
+    // Read-only list of every live review, each with its own Delete button. Reviews
+    // are added by visitors on the public site (Firestore 'reviews' collection);
+    // deleting here removes that Firestore document, so it disappears for everyone.
+    function loadAndRenderReviewsAdmin(){
+      $('kaReviewsList').innerHTML = '<div class="ka-sub">Loading reviews…</div>';
+      kaDb.collection('reviews').orderBy('createdAt', 'desc').get().then(snap => {
+        $('kaReviewsList').innerHTML = '';
+        if (snap.empty) { $('kaReviewsList').innerHTML = '<div class="ka-sub">No reviews yet.</div>'; return; }
+        snap.forEach(doc => {
+          const r = doc.data();
+          const card = document.createElement('div');
+          card.className = 'ka-item-card';
+          card.innerHTML = `<div class="ka-item-fields">
+              <div>${'★'.repeat(r.stars || 5)}${'☆'.repeat(5 - (r.stars || 5))}</div>
+              <div style="margin:6px 0;">"${(r.text || '').replace(/</g,'&lt;')}"</div>
+              <div class="ka-sub">— ${(r.who || 'Anonymous customer').replace(/</g,'&lt;')}</div>
+            </div>
+            <button class="ka-remove-btn" title="Delete this review">&times;</button>`;
+          card.querySelector('.ka-remove-btn').addEventListener('click', () => {
+            if (!confirm('Delete this review for everyone? This cannot be undone.')) return;
+            kaDb.collection('reviews').doc(doc.id).delete()
+              .then(() => card.remove())
+              .catch(err => alert('Could not delete: ' + err.message));
+          });
+          $('kaReviewsList').appendChild(card);
+        });
+      }).catch(err => { $('kaReviewsList').innerHTML = '<div class="ka-sub">Could not load reviews.</div>'; console.warn(err); });
+    }
+
+    $('kaSaveContact').addEventListener('click', () => {
+      const c = loadContentData();
+      c.contact = {
+        address: $('ka-cAddress').value.trim(), phone: $('ka-cPhone').value.trim(), hours: $('ka-cHours').value.trim(),
+        tiktok: $('ka-cTiktok').value.trim() || '#', instagram: $('ka-cInstagram').value.trim() || '#', youtube: $('ka-cYoutube').value.trim() || '#'
+      };
+      saveContentData(c); flashSaved('ka-saved-contact');
+    });
+
+    function renderAdminsList(){
+      const admins = loadAdmins();
+      const wrap = $('kaAdminsList');
+      wrap.innerHTML = '';
+      const regularAdmins = admins.filter(a => a.role !== 'super');
+      $('kaAdminLimitNote').textContent = `Regular admins: ${regularAdmins.length} of 3 maximum slots used.`;
+
+      admins.forEach(a => {
+        const row = document.createElement('div');
+        row.className = 'ka-admin-row';
+        const canRemove = a.role !== 'super' && currentUser.role === 'super';
+        row.innerHTML = `<div><div class="ka-name">${a.username}</div><div class="ka-meta">${a.role === 'super' ? 'Super Admin' : 'Admin'}</div></div>
+          ${canRemove ? `<button class="ka-btn ka-btn-danger ka-rm-admin" data-user="${a.username}">Remove</button>` : ''}`;
+        if (canRemove) {
+          row.querySelector('.ka-rm-admin').addEventListener('click', () => {
+            if (!confirm(`Remove admin "${a.username}"?`)) return;
+            const updated = loadAdmins().filter(x => x.username !== a.username);
+            saveAdmins(updated); renderAdminsList();
+          });
+        }
+        wrap.appendChild(row);
+      });
+    }
+
+    $('kaAddAdminBtn').addEventListener('click', () => {
+      const u = $('kaNewAdminUser').value.trim();
+      const p = $('kaNewAdminPass').value;
+      if (!u || !p) { alert('Username and password are required.'); return; }
+      const admins = loadAdmins();
+      if (admins.filter(a => a.role !== 'super').length >= 3) {
+        alert('Maximum of 3 admin accounts reached.'); return;
+      }
+      if (admins.some(a => a.username.toLowerCase() === u.toLowerCase())) {
+        alert('An account with that username already exists.'); return;
+      }
+      admins.push({ username: u, password: p, role: 'admin' });
+      saveAdmins(admins);
+      $('kaNewAdminUser').value = ''; $('kaNewAdminPass').value = '';
+      renderAdminsList();
+      flashSaved('ka-saved-admins');
+    });
+  }
+
+  function checkAdminTrigger(){
+    if (window.location.hash === SECRET_HASH) {
+      if (!document.getElementById('kaRoot')) buildAdminPanel();
+    }
+  }
+  window.addEventListener('hashchange', checkAdminTrigger);
+  checkAdminTrigger();
+</script>
+</body>
+</html>
